@@ -10,14 +10,17 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        bg: "var(--bg)",
-        fg: "var(--fg)",
-        muted: "var(--muted)",
-        border: "var(--border)",
-        primary: "var(--primary)",
-        onprimary: "var(--on-primary)",
-        accent: "var(--accent)",
-        merlot: "var(--merlot)",
+        bg: "#fefdf8",
+        fg: "#2c1810",
+        muted: "#f7f4f0",
+        border: "#e8ddd4",
+        primary: "#722f37",
+        "on-primary": "#fefdf8",
+        accent: "#8b4513",
+        merlot: "#722f37",
+        "merlot-light": "#8b4a52",
+        ivory: "#fefdf8",
+        "ivory-dark": "#f5f1e8",
       },
       fontFamily: {
         sans: ['var(--font-sans)'],

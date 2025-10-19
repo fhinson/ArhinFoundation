@@ -2,19 +2,70 @@
 @import './base.css';
 @import './typography.css' layer(components);
 
-@import url('https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Karla:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
-
 :root {
-  --font-sans: 'Karla', ui-sans-serif, system-ui, sans-serif;
-  --font-display: 'Cormorant', ui-serif, Georgia, serif;
-  
-  /* Brand color tokens */
-  --bg: #F8F7F3;        /* Paper */
-  --fg: #0B0B0B;        /* Ink */
-  --muted: #EDEAE3;     /* Muted paper */
-  --border: #DCD7CE;     /* Border */
-  --primary: #5F7F72;   /* Sage */
-  --on-primary: #FFFFFF;
-  --accent: #B29A5B;    /* Brass */
-  --merlot: #7A1E33;    /* Ceremonial */
+  /* Brand Colors - Merlot & Ivory Palette */
+  --bg: #fefdf8; /* Warm Ivory - main background */
+  --fg: #2c1810; /* Rich Brown - primary text */
+  --muted: #f7f4f0; /* Soft Ivory - muted backgrounds */
+  --border: #e8ddd4; /* Warm border */
+  --primary: #722f37; /* Merlot - primary CTAs */
+  --on-primary: #fefdf8; /* Ivory text on Merlot */
+  --accent: #8b4513; /* Saddle Brown - accents */
+  --merlot: #722f37; /* Merlot - brand color */
+  --merlot-light: #8b4a52; /* Lighter Merlot for hover states */
+  --ivory: #fefdf8; /* Pure Ivory */
+  --ivory-dark: #f5f1e8; /* Darker Ivory for subtle contrast */
+}
+
+/* Ensure CSS variables are available globally */
+html {
+  --bg: #fefdf8;
+  --fg: #2c1810;
+  --muted: #f7f4f0;
+  --border: #e8ddd4;
+  --primary: #722f37;
+  --on-primary: #fefdf8;
+  --accent: #8b4513;
+  --merlot: #722f37;
+  --merlot-light: #8b4a52;
+  --ivory: #fefdf8;
+  --ivory-dark: #f5f1e8;
+}
+
+@theme {
+  --text-*: initial;
+  --text-xs: 0.75rem;
+  --text-xs--line-height: 1rem;
+  --text-sm: 0.875rem;
+  --text-sm--line-height: 1.5rem;
+  --text-base: 1rem;
+  --text-base--line-height: 1.75rem;
+  --text-lg: 1.125rem;
+  --text-lg--line-height: 1.75rem;
+  --text-xl: 1.25rem;
+  --text-xl--line-height: 2rem;
+  --text-2xl: 1.5rem;
+  --text-2xl--line-height: 2.25rem;
+  --text-3xl: 1.75rem;
+  --text-3xl--line-height: 2.25rem;
+  --text-4xl: 2rem;
+  --text-4xl--line-height: 2.5rem;
+  --text-5xl: 2.5rem;
+  --text-5xl--line-height: 3rem;
+  --text-6xl: 3rem;
+  --text-6xl--line-height: 3.5rem;
+  --text-7xl: 4rem;
+  --text-7xl--line-height: 4.5rem;
+
+  --font-sans:
+    var(--font-karla), ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji',
+    'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+
+  --font-display:
+    var(--font-cormorant), ui-serif, Georgia, serif, 'Apple Color Emoji',
+    'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+
+  --font-display--font-variation-settings: 'wdth' 125;
+
+  --font-display-length: 2;
 }

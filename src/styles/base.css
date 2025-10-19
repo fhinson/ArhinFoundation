@@ -6,3 +6,8 @@
   font-stretch: 75% 125%;
   src: url('../fonts/Mona-Sans.var.woff2') format('woff2');
 }
+
+/* Remove all rounded corners globally */
+* {
+  border-radius: 0 !important;
+}

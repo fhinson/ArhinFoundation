@@ -2,282 +2,187 @@ import { type Metadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
 
+import { ContactSection } from '@/components/ContactSection'
 import { Container } from '@/components/Container'
-import { Button } from '@/components/Button'
-import imageMeeting from '@/images/meeting.jpg'
+import { FadeIn, FadeInStagger } from '@/components/FadeIn'
+import { List, ListItem } from '@/components/List'
+import { SectionIntro } from '@/components/SectionIntro'
+import { StylizedImage } from '@/components/StylizedImage'
+import { Testimonial } from '@/components/Testimonial'
+import logoPhobiaDark from '@/images/clients/phobia/logo-dark.svg'
+import imageLaptop from '@/images/laptop.jpg'
+import { RootLayout } from '@/components/RootLayout'
 
-export const metadata: Metadata = {
-  title: 'Home',
-  description: 'A healthy mind is the foundation of a healthy life.',
-}
+const focusAreas = [
+  ['Access', 'Move people from waitlists to care: therapy funds, clinics, provider networks.'],
+  ['Talent', 'Train and support clinicians: scholarships, supervision, fellowships.'],
+  ['Stigma', 'Make help-seeking normal: consent-first creator micro-grants.'],
+]
 
-// Pristine template markup - exact copy from baseline
-function Hero() {
+function FocusAreas() {
   return (
-    <div className="relative">
-      {/* Background ornaments */}
-      <div className="absolute inset-0 -z-10">
-        <div className="absolute inset-0 bg-gradient-to-r from-primary/5 to-accent/5" />
-        <div className="absolute -top-24 -right-24 h-96 w-96 rounded-full bg-primary/10 blur-3xl" />
-        <div className="absolute -bottom-24 -left-24 h-96 w-96 rounded-full bg-accent/10 blur-3xl" />
-        <div className="absolute top-1/4 right-1/4 h-32 w-32 rounded-2xl bg-primary/5 rotate-12" />
-        <div className="absolute bottom-1/4 left-1/4 h-24 w-24 rounded-xl bg-accent/5 -rotate-12" />
-      </div>
-      
-      <Container className="py-24 sm:py-32 lg:py-40">
-        <div className="max-w-3xl">
-          <h1 className="font-display text-5xl font-medium tracking-tight text-balance text-fg sm:text-6xl lg:text-7xl">
-            A healthy mind is the foundation of a healthy life.
-          </h1>
-          <p className="mt-6 text-xl text-fg/70 sm:text-2xl">
-            Everyone deserves to dream.
-          </p>
-        </div>
+    <div className="mt-24 bg-slate-900 py-20 sm:mt-32 sm:py-32 lg:mt-56">
+      <Container>
+        <FadeIn className="flex items-center gap-x-8">
+              <h2 className="text-center font-display text-lg font-semibold tracking-wider text-white sm:text-left">
+                Focus area
+              </h2>
+          <div className="h-px flex-auto bg-slate-200/20" />
+        </FadeIn>
+        <FadeInStagger faster>
+          <ul
+            role="list"
+            className="mt-10 grid grid-cols-1 gap-x-8 gap-y-10 lg:grid-cols-3"
+          >
+            {focusAreas.map(([area, description]) => (
+              <li key={area} className="text-center">
+                <FadeIn>
+                  <div className="text-white">
+                    <h3 className="font-display text-lg font-semibold text-white">{area}</h3>
+                    <p className="mt-2 text-base text-white/70">{description}</p>
+                  </div>
+                </FadeIn>
+              </li>
+            ))}
+          </ul>
+        </FadeInStagger>
       </Container>
     </div>
   )
 }
 
-function FeatureCards() {
-  const features = [
+function ImpactStories() {
+  const stories = [
     {
-      eyebrow: "Focus area",
-      title: "Access",
-      description: "Move people from waitlists to care: therapy funds, clinics, provider networks.",
+      title: "Therapy Fund Expansion",
+      description: "Supported 15 community clinics to reduce wait times from 6 months to 2 weeks, serving 2,000+ individuals.",
+      category: "Access",
+      year: "2024"
     },
     {
-      eyebrow: "Focus area", 
-      title: "Talent",
-      description: "Train and support clinicians: scholarships, supervision, fellowships.",
+      title: "Clinical Fellowship Program", 
+      description: "Launched fellowship program training 25 new clinicians in culturally-responsive mental health care.",
+      category: "Talent",
+      year: "2024"
     },
     {
-      eyebrow: "Focus area",
-      title: "Stigma", 
-      description: "Normalize help-seeking: consent-first creator micro-grants.",
-    },
+      title: "Stigma Reduction Campaign",
+      description: "Partnered with content creators to normalize mental health conversations, reaching 1M+ young adults.",
+      category: "Stigma", 
+      year: "2023"
+    }
   ]
 
   return (
-    <Container>
-      <div className="py-16 sm:py-20 lg:py-24">
-        <div className="grid grid-cols-1 gap-8 lg:grid-cols-3">
-          {features.map((feature) => (
-            <div key={feature.title} className="flex">
-              <div className="group relative flex w-full flex-col rounded-2xl bg-bg p-6 shadow-sm ring-1 ring-border transition hover:bg-muted hover:shadow-md sm:p-8">
-                <div className="flex items-center gap-x-4">
-                  <div className="flex h-10 w-10 items-center justify-center rounded-full bg-primary text-sm font-semibold text-onprimary">
-                    {feature.title.charAt(0)}
+    <>
+      <SectionIntro
+        title="We believe everyone deserves access to quality mental health care. We're here to support you through your journey—quietly removing barriers so help feels close to home."
+        className="mt-24 sm:mt-32 lg:mt-40"
+      >
+        <p>
+          Access should be timely, affordable, and culturally aware. Strong communities need strong minds. Change scales when we back people and proven programs.
+        </p>
+      </SectionIntro>
+      <Container className="mt-16">
+        <FadeInStagger className="grid grid-cols-1 gap-8 lg:grid-cols-3">
+          {stories.map((story) => (
+            <FadeIn key={story.title} className="flex">
+              <article className="relative flex w-full flex-col p-6 ring-1 ring-slate-900/10 transition hover:bg-slate-100 sm:p-8">
+                <div className="flex items-center gap-3 mb-4">
+                  <div className="h-12 w-12 bg-slate-800 flex items-center justify-center">
+                    <span className="text-white font-semibold text-sm">{story.category.charAt(0)}</span>
                   </div>
                   <div>
-                    <p className="text-sm font-semibold text-primary">{feature.eyebrow}</p>
+                    <p className="text-sm font-semibold text-slate-900">{story.category}</p>
+                    <p className="text-sm text-slate-700/60">{story.year}</p>
                   </div>
                 </div>
-                <h3 className="mt-4 font-display text-xl font-semibold text-fg">
-                  {feature.title}
+                <h3 className="font-display text-3xl font-semibold text-slate-900 mb-4">
+                  {story.title}
                 </h3>
-                <p className="mt-4 text-base text-fg/70">
-                  {feature.description}
+                <p className="text-lg text-slate-700/70">
+                  {story.description}
                 </p>
-              </div>
-            </div>
+              </article>
+            </FadeIn>
           ))}
-        </div>
-      </div>
-    </Container>
+        </FadeInStagger>
+      </Container>
+    </>
   )
 }
 
-function TestimonialBand() {
+function Approach() {
   return (
-    <div className="relative overflow-hidden bg-muted">
-      <div className="absolute inset-0">
-        <div className="absolute inset-0 bg-gradient-to-r from-primary/5 to-accent/5" />
-        <div className="absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg%20width%3D%2260%22%20height%3D%2260%22%20viewBox%3D%220%200%2060%2060%22%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%3E%3Cg%20fill%3D%22none%22%20fill-rule%3D%22evenodd%22%3E%3Cg%20fill%3D%22%23B29A5B%22%20fill-opacity%3D%220.1%22%3E%3Ccircle%20cx%3D%2230%22%20cy%3D%2230%22%20r%3D%222%22/%3E%3C/g%3E%3C/g%3E%3C/svg%3E')] opacity-20" />
-      </div>
-      <Container>
-        <div className="relative py-24 sm:py-32">
-          <div className="mx-auto max-w-4xl text-center">
-            <blockquote className="font-display text-2xl font-medium text-fg sm:text-3xl">
-              <p>
-                &ldquo;We back practical access, develop talent, and reduce stigma—quietly removing friction so help feels close to home.&rdquo;
-              </p>
-            </blockquote>
+    <>
+      <SectionIntro
+        eyebrow="How we work"
+        title="We listen to real needs, support proven solutions, and learn from every person we serve. Our approach is built on trust, evidence, and genuine care."
+        className="mt-24 sm:mt-32 lg:mt-40"
+      >
+      </SectionIntro>
+      <Container className="mt-16">
+        <div className="lg:flex lg:items-center lg:justify-end">
+          <div className="flex justify-center lg:w-1/2 lg:justify-end lg:pr-12">
+            <FadeIn className="w-135 flex-none lg:w-180">
+              <StylizedImage
+                src={imageLaptop}
+                sizes="(min-width: 1024px) 41rem, 31rem"
+                className="justify-center lg:justify-end"
+              />
+            </FadeIn>
           </div>
+          <List className="mt-16 lg:mt-0 lg:w-1/2 lg:min-w-132 lg:pl-4">
+            <ListItem title="Listen with compassion">
+              We start by understanding real needs and lived experiences.
+            </ListItem>
+            <ListItem title="Support what works">
+              We fund evidence-based approaches that make a real difference.
+            </ListItem>
+            <ListItem title="Learn and grow together">
+              We continuously improve by listening to those we serve.
+            </ListItem>
+          </List>
         </div>
       </Container>
-    </div>
+    </>
   )
 }
 
-function ServicesBand() {
-  const services = [
-    {
-      eyebrow: "Step 1",
-      title: "Listen",
-      description: "Start with real needs.",
-    },
-    {
-      eyebrow: "Step 2", 
-      title: "Back what works",
-      description: "Fund proven approaches.",
-    },
-    {
-      eyebrow: "Step 3",
-      title: "Learn and refine", 
-      description: "Evaluate and adapt.",
-    },
-  ]
-
-  return (
-    <Container>
-      <div className="py-16 sm:py-20 lg:py-24">
-        <div className="grid grid-cols-1 gap-12 lg:grid-cols-2 lg:gap-16">
-          <div className="relative">
-            <div className="aspect-[4/3] overflow-hidden rounded-3xl bg-neutral-100">
-              <Image
-                src={imageMeeting}
-                alt="Team meeting"
-                className="h-full w-full object-cover grayscale transition duration-500 motion-safe:hover:scale-105"
-                priority
-              />
-            </div>
-          </div>
-          
-          <div className="flex flex-col justify-center">
-            <h2 className="font-display text-3xl font-medium text-balance text-fg sm:text-4xl">
-              How We Work
-            </h2>
-            <p className="mt-6 text-lg text-fg/70">
-              Listen to the field, back what works, learn and refine.
-            </p>
-            
-            <div className="mt-8 space-y-8">
-              {services.map((service, index) => (
-                <div key={service.title} className="relative">
-                  {index > 0 && (
-                    <div className="absolute -top-4 left-0 h-px w-full bg-border" />
-                  )}
-                  <div className="flex items-start gap-4">
-                    <div className="flex h-8 w-8 items-center justify-center rounded-full bg-primary text-sm font-semibold text-onprimary">
-                      {index + 1}
-                    </div>
-                    <div>
-                      <p className="text-sm font-semibold text-primary">{service.eyebrow}</p>
-                      <h3 className="mt-1 font-display text-xl font-semibold text-fg">
-                        {service.title}
-                      </h3>
-                      <p className="mt-2 text-base text-fg/70">
-                        {service.description}
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </div>
-    </Container>
-  )
-}
-
-function DarkCTA() {
-  return (
-    <Container>
-      <div className="py-16 sm:py-20 lg:py-24">
-        <div className="rounded-4xl bg-fg px-6 py-20 sm:px-12 sm:py-32">
-          <div className="mx-auto max-w-4xl text-center">
-            <h2 className="font-display text-3xl font-medium text-balance text-bg sm:text-4xl">
-              Get In Touch
-            </h2>
-            <p className="mt-6 text-lg text-bg/80">
-              Ready to make a difference? We&apos;d love to hear from you.
-            </p>
-            <div className="mt-8">
-              <Button href="/contact" invert>
-                Contact Us
-              </Button>
-            </div>
-          </div>
-        </div>
-      </div>
-    </Container>
-  )
-}
-
-function Footer() {
-  return (
-    <Container as="footer" className="w-full">
-      <div>
-        <div className="grid grid-cols-1 gap-x-8 gap-y-16 lg:grid-cols-3">
-          {/* Navigation */}
-          <nav>
-            <ul role="list" className="grid grid-cols-2 gap-8 sm:grid-cols-4">
-              <li><Link href="/" className="text-sm text-fg/70 transition hover:text-primary">Home</Link></li>
-              <li><Link href="/mission" className="text-sm text-fg/70 transition hover:text-primary">Mission</Link></li>
-              <li><Link href="/about" className="text-sm text-fg/70 transition hover:text-primary">About</Link></li>
-              <li><Link href="/contact" className="text-sm text-fg/70 transition hover:text-primary">Contact</Link></li>
-            </ul>
-          </nav>
-
-          {/* Newsletter */}
-          <div>
-            <h3 className="font-display text-sm font-semibold tracking-wider text-fg">
-              Stay Updated
-            </h3>
-            <p className="mt-4 text-sm text-fg/70">
-              Get updates on our work and impact.
-            </p>
-            <form className="mt-6">
-              <div className="flex gap-2">
-                <input
-                  type="email"
-                  placeholder="Enter your email"
-                  className="flex-1 rounded-full border border-border bg-transparent px-4 py-2 text-sm text-fg placeholder:text-fg/50 focus:border-primary focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2"
-                  required
-                />
-                <Button type="submit" className="px-6 py-2 text-sm">
-                  Subscribe
-                </Button>
-              </div>
-            </form>
-          </div>
-
-          {/* Foundation Info */}
-          <div className="flex lg:justify-end">
-            <div className="max-w-sm">
-              <h2 className="font-display text-sm font-semibold tracking-wider text-fg">
-                Arhin Foundation
-              </h2>
-              <p className="mt-4 text-sm text-fg/70">
-                Philanthropy with discipline—mental health first.
-              </p>
-            </div>
-          </div>
-        </div>
-        
-        <div className="mt-16 flex flex-wrap items-end justify-between gap-x-6 gap-y-4 border-t border-border pt-8">
-          <Link href="/" aria-label="Home" className="text-fg">
-            <span className="font-display text-lg font-semibold">Arhin Foundation</span>
-          </Link>
-          <p className="text-sm text-fg/70">
-            © Arhin Foundation {new Date().getFullYear()}
-          </p>
-        </div>
-      </div>
-    </Container>
-  )
+export const metadata: Metadata = {
+  title: 'Arhin Foundation - A healthy mind is the foundation of a healthy life',
+  description:
+    'We back practical access to mental health care, develop talent in the field, and reduce stigma so help feels normal and close to home.',
 }
 
 export default function Home() {
   return (
-    <>
-      <Hero />
-      <FeatureCards />
-      <TestimonialBand />
-      <ServicesBand />
-      <DarkCTA />
-      <Footer />
-    </>
+    <RootLayout>
+      <Container className="mt-24 sm:mt-32 md:mt-56">
+        <FadeIn className="max-w-3xl">
+              <h1 className="font-display text-5xl font-medium tracking-tight text-balance text-slate-900 sm:text-7xl">
+            A healthy mind is the foundation of a healthy life.
+          </h1>
+          <p className="mt-6 text-2xl text-slate-700/70">
+            Everyone deserves to dream.
+          </p>
+        </FadeIn>
+      </Container>
+
+      <FocusAreas />
+
+      <ImpactStories />
+
+      <Testimonial
+        className="mt-24 sm:mt-32 lg:mt-40"
+        client={{ name: 'Arhin Foundation', logo: logoPhobiaDark }}
+      >
+        We back practical access, develop talent, and reduce stigma—quietly removing friction so help feels close to home.
+      </Testimonial>
+
+      <Approach />
+
+      <ContactSection />
+    </RootLayout>
   )
 }

@@ -1,124 +1,160 @@
 import { type Metadata } from 'next'
 import Image from 'next/image'
-import Link from 'next/link'
 
-import { Hero } from '@/components/Hero'
-import { Section } from '@/components/Section'
-import { Container } from '@/components/Container'
 import { Border } from '@/components/Border'
-import { site } from '@/site.config'
-import imageFounder from '@/images/team/leslie-alexander.jpg'
+import { ContactSection } from '@/components/ContactSection'
+import { Container } from '@/components/Container'
+import { FadeIn, FadeInStagger } from '@/components/FadeIn'
+import { GridList, GridListItem } from '@/components/GridList'
+import { PageIntro } from '@/components/PageIntro'
+import { PageLinks } from '@/components/PageLinks'
+import { SectionIntro } from '@/components/SectionIntro'
+import { StatList, StatListItem } from '@/components/StatList'
+import imageLaptop from '@/images/laptop.jpg'
+import { loadArticles } from '@/lib/mdx'
+import { RootLayout } from '@/components/RootLayout'
 
-export const metadata: Metadata = {
-  title: 'About',
-  description: site.seo.description,
-}
-
-function FounderBio() {
+function FounderStory() {
   return (
-    <Section>
-      <div className="grid grid-cols-1 gap-12 lg:grid-cols-2 lg:gap-16">
-        <div>
-            <div>
-              <h2 className="font-display text-3xl font-medium text-balance text-fg sm:text-4xl">
-                About the founder
-              </h2>
-              <div className="mt-2 h-px w-16 bg-merlot/30"></div>
-              <div className="mt-6 space-y-6 text-base text-fg/70">
-                <p><strong>Kumi Arhin</strong> is a technologist, builder, and investor focused on creating enduring institutions. His work spans product partnerships in the music ecosystem and the founding of <strong>Ofori Brothers</strong>, a premium wine house known for craft, clarity, and cultural ambition.</p>
-                <p>The <strong>Arhin Foundation</strong> is Kumi&apos;s philanthropic vehicle for disciplined, high-leverage giving—beginning with practical mental-health access, the development of talent in the field, and thoughtful stigma reduction. He champions a standard of excellence that blends engineering rigor with creative vision, and he brings the same standard to how he gives.</p>
-                <p><strong>Selected affiliations & work:</strong> Partner Engineer, Google / YouTube · Founder, Ofori Brothers Wine · Columbia University alumnus · Y Combinator alumnus.</p>
+    <div className="mt-24 bg-fg py-24 sm:mt-32 lg:mt-40 lg:py-32">
+      <SectionIntro
+        eyebrow="About the founder"
+        title="Francis Kumi Arhin"
+        invert
+      >
+        <p>
+          A technologist and philanthropist with a deep commitment to mental health access and community-driven solutions.
+        </p>
+      </SectionIntro>
+      <Container className="mt-16">
+        <div className="lg:flex lg:items-center lg:justify-end">
+          <div className="flex justify-center lg:w-1/2 lg:justify-end lg:pr-12">
+            <FadeIn className="w-135 flex-none lg:w-180">
+              <div className="relative flex aspect-719/680 w-full grayscale">
+                <Image
+                  src={imageLaptop}
+                  alt="Francis Kumi Arhin"
+                  className="h-full w-full object-cover"
+                  sizes="(min-width: 1024px) 41rem, 31rem"
+                />
               </div>
+            </FadeIn>
+          </div>
+          <div className="mt-16 lg:mt-0 lg:w-1/2 lg:min-w-132 lg:pl-4">
+            <div className="space-y-6 text-lg text-white">
+              <p>
+                Francis Kumi Arhin brings over a decade of experience in technology and product development, having worked at Google and YouTube, where he focused on building products that serve diverse communities.
+              </p>
+              <p>
+                His approach to philanthropy is rooted in evidence-based interventions and community partnership. Rather than imposing solutions, Francis believes in backing what works and learning from the field.
+              </p>
+              <p>
+                The Arhin Foundation reflects his conviction that mental health support should be accessible, culturally aware, and community-driven. Every initiative is designed to reduce barriers and strengthen local capacity.
+              </p>
             </div>
-        </div>
-        
-        <div className="relative">
-          <div className="aspect-[4/5] overflow-hidden rounded-3xl bg-neutral-100">
-            <Image
-              src={imageFounder}
-              alt="Kumi Arhin, Founder"
-              className="h-full w-full object-cover grayscale transition duration-500 motion-safe:hover:scale-105"
-              priority
-            />
           </div>
         </div>
-      </div>
-    </Section>
+      </Container>
+    </div>
   )
 }
+
+const affiliations = [
+  {
+    organization: 'Partner Engineer, Google / YouTube',
+    role: '',
+    description: '',
+    period: ''
+  },
+  {
+    organization: 'Founder, Ofori Brothers Wine',
+    role: '',
+    description: '',
+    period: ''
+  },
+  {
+    organization: 'Columbia University alumnus · Y Combinator alumnus',
+    role: '',
+    description: '',
+    period: ''
+  }
+]
 
 function Affiliations() {
   return (
-    <Section>
-      <div className="rounded-4xl bg-fg py-24 sm:py-32">
-        <Container>
-          <div>
-            <h2 className="font-display text-3xl font-medium text-balance text-bg sm:text-4xl">
-              Affiliations & Press
+    <Container className="mt-24 sm:mt-32 lg:mt-40">
+      <FadeInStagger>
+        <Border as={FadeIn} />
+        <div className="grid grid-cols-1 gap-6 pt-12 sm:pt-16 lg:grid-cols-4 xl:gap-8">
+          <FadeIn>
+            <h2 className="font-display text-2xl font-semibold text-fg">
+              Selected affiliations & work
             </h2>
-            <p className="mt-6 text-lg text-bg/80">
-              Kumi&apos;s work spans technology, entrepreneurship, and cultural institutions.
-            </p>
+          </FadeIn>
+          <div className="lg:col-span-3">
+            <ul
+              role="list"
+              className="grid grid-cols-1 gap-4 sm:grid-cols-1 lg:grid-cols-1 xl:gap-4"
+            >
+              {affiliations.map((affiliation) => (
+                <li key={affiliation.organization}>
+                  <FadeIn>
+                    <div className="text-lg text-fg">
+                      {affiliation.organization}
+                    </div>
+                  </FadeIn>
+                </li>
+              ))}
+            </ul>
           </div>
-          
-          <div className="mt-12">
-            <Border as="div" className="border-white/10">
-              <ul className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
-                    <li className="text-bg">
-                      <h3 className="font-semibold">Google / YouTube</h3>
-                      <p className="mt-2 text-sm text-bg/80">Partner Engineer, product partnerships</p>
-                    </li>
-                    <li className="text-bg">
-                      <h3 className="font-semibold">Ofori Brothers Wine</h3>
-                      <p className="mt-2 text-sm text-bg/80">Founder, premium wine house</p>
-                    </li>
-                    <li className="text-bg">
-                      <h3 className="font-semibold">Columbia University</h3>
-                      <p className="mt-2 text-sm text-bg/80">Alumnus, Y Combinator alumnus</p>
-                    </li>
-              </ul>
-            </Border>
-          </div>
-        </Container>
-      </div>
-    </Section>
-  )
-}
-
-function ExternalLinks() {
-  return (
-    <Section>
-      <div>
-        <h2 className="font-display text-2xl font-semibold text-fg">
-          Learn More
-        </h2>
-        <p className="mt-4 text-base text-fg/70">
-          Learn more about Kumi&apos;s work and the foundation&apos;s approach to giving.
-        </p>
-        <div className="mt-6">
-          <Link
-            href="/contact"
-            className="inline-flex items-center text-sm font-semibold text-primary hover:text-primary/80"
-          >
-            Get in touch
-            <span className="ml-2" aria-hidden="true">→</span>
-          </Link>
         </div>
-      </div>
-    </Section>
+      </FadeInStagger>
+    </Container>
   )
 }
 
-export default function About() {
+export const metadata: Metadata = {
+  title: 'About the Founder',
+  description:
+    'Francis Kumi Arhin is a technologist and philanthropist with a deep commitment to mental health access and community-driven solutions.',
+}
+
+export default async function About() {
+  let blogArticles = (await loadArticles()).slice(0, 2)
+
   return (
-    <>
-      <Hero 
-        title="About Us" 
-        subtitle="Learn about our founder and mission"
-      />
-      <FounderBio />
+    <RootLayout>
+      <PageIntro eyebrow="About the founder" title="About the founder">
+        <p>
+          Kumi Arhin is a technologist, builder, and investor focused on creating enduring institutions. His work spans product partnerships in the music ecosystem and the founding of Ofori Brothers, a premium wine house known for craft, clarity, and cultural ambition.
+        </p>
+        <div className="mt-10 max-w-2xl space-y-6 text-lg">
+          <p>
+            The Arhin Foundation is Kumi's philanthropic vehicle for disciplined, high-leverage giving—beginning with practical mental-health access, the development of talent in the field, and thoughtful stigma reduction. He brings an executive standard that blends engineering rigor with creative vision, and he applies the same standard to how he gives.
+          </p>
+        </div>
+      </PageIntro>
+      
+      <Container className="mt-16">
+        <StatList>
+          <StatListItem value="10+" label="Years in technology" />
+          <StatListItem value="2M+" label="Creators served" />
+          <StatListItem value="15" label="Community partnerships" />
+        </StatList>
+      </Container>
+
+      <FounderStory />
+
       <Affiliations />
-      <ExternalLinks />
-    </>
+
+      <PageLinks
+        className="mt-24 sm:mt-32 lg:mt-40"
+        title="From the blog"
+        intro="Insights on mental health access, community-driven solutions, and evidence-based philanthropy from our work in the field."
+        pages={blogArticles}
+      />
+
+      <ContactSection />
+    </RootLayout>
   )
 }

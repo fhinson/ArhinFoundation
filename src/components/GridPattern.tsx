@@ -1,20 +1,38 @@
 'use client'
 
-import { useEffect, useId, useRef, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { motion } from 'framer-motion'
 
-function Block({
+// Grid constants adapted from the original. Smaller cells = more circles.
+const CELL_X = 96
+const CELL_Y = 96
+const SKEW_X_PER_Y = 32
+// Calibration to reduce perceived hover offset (in px)
+const CALIBRATION_X = -4
+const CALIBRATION_Y = -2
+// Circle drawing radius and hover activation radius (smaller than full circle)
+const RADIUS = 20
+const ACTIVATE_RADIUS = Math.floor(RADIUS * 0.8)
+
+// (Removed old trapezoid Block; we use circles now.)
+
+// Circle primitive positioned on the same isometric grid as the original blocks
+function Circle({
   x,
   y,
+  r = 20,
   ...props
-}: Omit<React.ComponentPropsWithoutRef<typeof motion.path>, 'x' | 'y'> & {
+}: Omit<React.ComponentPropsWithoutRef<typeof motion.circle>, 'x' | 'y'> & {
   x: number
   y: number
+  r?: number
 }) {
   return (
-    <motion.path
-      transform={`translate(${-32 * y + 96 * x} ${160 * y})`}
-      d="M45.119 4.5a11.5 11.5 0 0 0-11.277 9.245l-25.6 128C6.82 148.861 12.262 155.5 19.52 155.5h63.366a11.5 11.5 0 0 0 11.277-9.245l25.6-128c1.423-7.116-4.02-13.755-11.277-13.755H45.119Z"
+    <motion.circle
+      transform={`translate(${-SKEW_X_PER_Y * y + CELL_X * x} ${CELL_Y * y})`}
+      cx={0}
+      cy={0}
+      r={r}
       {...props}
     />
   )
@@ -28,7 +46,6 @@ export function GridPattern({
   yOffset?: number
   interactive?: boolean
 }) {
-  let id = useId()
   let ref = useRef<React.ElementRef<'svg'>>(null)
   let currentBlock = useRef<[x: number, y: number] | undefined>(undefined)
   let counter = useRef(0)
@@ -43,6 +60,14 @@ export function GridPattern({
     [7, 4],
     [5, 5],
   ]
+
+  // Frame circle outlines across the field, aligned to the isometric grid
+  let frameBlocks: Array<[x: number, y: number]> = []
+  for (let gy = -6; gy <= 10; gy++) {
+    for (let gx = -10; gx <= 16; gx++) {
+      frameBlocks.push([gx, gy])
+    }
+  }
 
   useEffect(() => {
     if (!interactive) {
@@ -61,23 +86,37 @@ export function GridPattern({
         return
       }
 
-      x = x - rect.width / 2 - 32
-      y = y - yOffset
-      x += Math.tan(32 / 160) * y
-      x = Math.floor(x / 96)
-      y = Math.floor(y / 160)
+      // translate into inner svg coordinate system
+      x = x - rect.width / 2 + CALIBRATION_X
+      y = y - yOffset + CALIBRATION_Y
 
-      if (currentBlock.current?.[0] === x && currentBlock.current?.[1] === y) {
+      // invert the isometric transform used in Circle:
+      // u = -S*y + A*x, v = B*y  => y = v/B; x = (u + S*y)/A
+      let gy = y / CELL_Y
+      let gx = (x + SKEW_X_PER_Y * gy) / CELL_X
+      let ix = Math.round(gx)
+      let iy = Math.round(gy)
+
+      // compute the actual center of that cell in the same coordinate space
+      let cx = -SKEW_X_PER_Y * iy + CELL_X * ix
+      let cy = CELL_Y * iy
+      let dist = Math.hypot(x - cx, y - cy)
+
+      // only activate when hovering close enough to the circle center
+      if (dist > ACTIVATE_RADIUS) {
         return
       }
 
-      currentBlock.current = [x, y]
+      if (currentBlock.current?.[0] === ix && currentBlock.current?.[1] === iy) {
+        return
+      }
 
+      currentBlock.current = [ix, iy]
       setHoveredBlocks((blocks) => {
         let key = counter.current++
-        let block = [x, y, key] as (typeof hoveredBlocks)[number]
+        let block = [ix, iy, key] as (typeof hoveredBlocks)[number]
         return [...blocks, block].filter(
-          (block) => !(block[0] === x && block[1] === y && block[2] !== key),
+          (block) => !(block[0] === ix && block[1] === iy && block[2] !== key),
         )
       })
     }
@@ -91,17 +130,41 @@ export function GridPattern({
 
   return (
     <svg ref={ref} aria-hidden="true" {...props}>
-      <rect width="100%" height="100%" fill={`url(#${id})`} strokeWidth="0" />
+      <rect width="100%" height="100%" fill="transparent" strokeWidth="0" />
       <svg x="50%" y={yOffset} strokeWidth="0" className="overflow-visible">
-        {staticBlocks.map((block) => (
-          <Block key={`${block}`} x={block[0]} y={block[1]} />
+        {/* Faint circle outlines as the background frame */}
+        {frameBlocks.map(([gx, gy]) => (
+          <Circle
+            key={`frame-${gx}-${gy}`}
+            x={gx}
+            y={gy}
+            fill="none"
+            stroke="currentColor"
+            strokeWidth={1}
+            opacity={0.14}
+            vectorEffect="non-scaling-stroke"
+          />
         ))}
+
+        {/* Static accent circles (subtle filled) */}
+        {staticBlocks.map((block) => (
+          <Circle
+            key={`${block}`}
+            x={block[0]}
+            y={block[1]}
+            fill="currentColor"
+            opacity={0.04}
+          />
+        ))}
+
+        {/* Hover pulses as filled circles that fade in/out */}
         {hoveredBlocks.map((block) => (
-          <Block
+          <Circle
             key={block[2]}
             x={block[0]}
             y={block[1]}
-            animate={{ opacity: [0, 1, 0] }}
+            fill="currentColor"
+            animate={{ opacity: [0, 0.12, 0] }}
             transition={{ duration: 1, times: [0, 0, 1] }}
             onAnimationComplete={() => {
               setHoveredBlocks((blocks) =>
@@ -111,19 +174,6 @@ export function GridPattern({
           />
         ))}
       </svg>
-      <defs>
-        <pattern
-          id={id}
-          width="96"
-          height="480"
-          x="50%"
-          patternUnits="userSpaceOnUse"
-          patternTransform={`translate(0 ${yOffset})`}
-          fill="none"
-        >
-          <path d="M128 0 98.572 147.138A16 16 0 0 1 82.883 160H13.117a16 16 0 0 0-15.69 12.862l-26.855 134.276A16 16 0 0 1-45.117 320H-116M64-160 34.572-12.862A16 16 0 0 1 18.883 0h-69.766a16 16 0 0 0-15.69 12.862l-26.855 134.276A16 16 0 0 1-109.117 160H-180M192 160l-29.428 147.138A15.999 15.999 0 0 1 146.883 320H77.117a16 16 0 0 0-15.69 12.862L34.573 467.138A16 16 0 0 1 18.883 480H-52M-136 480h58.883a16 16 0 0 0 15.69-12.862l26.855-134.276A16 16 0 0 1-18.883 320h69.766a16 16 0 0 0 15.69-12.862l26.855-134.276A16 16 0 0 1 109.117 160H192M-72 640h58.883a16 16 0 0 0 15.69-12.862l26.855-134.276A16 16 0 0 1 45.117 480h69.766a15.999 15.999 0 0 0 15.689-12.862l26.856-134.276A15.999 15.999 0 0 1 173.117 320H256M-200 320h58.883a15.999 15.999 0 0 0 15.689-12.862l26.856-134.276A16 16 0 0 1-82.883 160h69.766a16 16 0 0 0 15.69-12.862L29.427 12.862A16 16 0 0 1 45.117 0H128" />
-        </pattern>
-      </defs>
     </svg>
   )
 }

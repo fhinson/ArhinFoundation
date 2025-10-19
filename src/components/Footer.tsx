@@ -7,28 +7,19 @@ import { socialMediaProfiles } from '@/components/SocialMedia'
 
 const navigation = [
   {
-    title: 'Work',
+    title: 'Foundation',
     links: [
-      { title: 'FamilyFund', href: '/work/family-fund' },
-      { title: 'Unseal', href: '/work/unseal' },
-      { title: 'Phobia', href: '/work/phobia' },
-      {
-        title: (
-          <>
-            See all <span aria-hidden="true">&rarr;</span>
-          </>
-        ),
-        href: '/work',
-      },
+      { title: 'Our Mission', href: '/mission' },
+      { title: 'About Us', href: '/about' },
+      { title: 'Contact', href: '/contact' },
     ],
   },
   {
-    title: 'Company',
+    title: 'Focus Areas',
     links: [
-      { title: 'About', href: '/about' },
-      { title: 'Process', href: '/process' },
-      { title: 'Blog', href: '/blog' },
-      { title: 'Contact us', href: '/contact' },
+      { title: 'Access', href: '/mission#access' },
+      { title: 'Talent', href: '/mission#talent' },
+      { title: 'Stigma', href: '/mission#stigma' },
     ],
   },
   {
@@ -43,15 +34,15 @@ function Navigation() {
       <ul role="list" className="grid grid-cols-2 gap-8 sm:grid-cols-3">
         {navigation.map((section, sectionIndex) => (
           <li key={sectionIndex}>
-            <div className="font-display text-sm font-semibold tracking-wider text-neutral-950">
+            <div className="font-display text-base font-semibold tracking-wider text-slate-900">
               {section.title}
             </div>
-            <ul role="list" className="mt-4 text-sm text-neutral-700">
+            <ul role="list" className="mt-4 text-base text-slate-700">
               {section.links.map((link, linkIndex) => (
                 <li key={linkIndex} className="mt-4">
                   <Link
                     href={link.href}
-                    className="transition hover:text-neutral-950"
+                    className="transition hover:text-slate-900"
                   >
                     {link.title}
                   </Link>
@@ -81,12 +72,11 @@ function ArrowIcon(props: React.ComponentPropsWithoutRef<'svg'>) {
 function NewsletterForm() {
   return (
     <form className="max-w-sm">
-      <h2 className="font-display text-sm font-semibold tracking-wider text-neutral-950">
-        Sign up for our newsletter
+      <h2 className="font-display text-base font-semibold tracking-wider text-slate-900">
+        Sign up for updates
       </h2>
-      <p className="mt-4 text-sm text-neutral-700">
-        Subscribe to get the latest design news, articles, resources and
-        inspiration.
+      <p className="mt-4 text-base text-slate-700">
+        Occasional notes on grants and learnings.
       </p>
       <div className="relative mt-6">
         <input
@@ -94,13 +84,13 @@ function NewsletterForm() {
           placeholder="Email address"
           autoComplete="email"
           aria-label="Email address"
-          className="block w-full rounded-2xl border border-neutral-300 bg-transparent py-4 pr-20 pl-6 text-base/6 text-neutral-950 ring-4 ring-transparent transition placeholder:text-neutral-500 focus:border-neutral-950 focus:ring-neutral-950/5 focus:outline-hidden"
+          className="block w-full border border-slate-300 bg-transparent py-4 pr-20 pl-6 text-base/6 text-slate-900 ring-4 ring-transparent transition placeholder:text-slate-500 focus:border-slate-900 focus:ring-slate-900/5 focus:outline-hidden"
         />
         <div className="absolute inset-y-1 right-1 flex justify-end">
           <button
             type="submit"
             aria-label="Submit"
-            className="flex aspect-square h-full items-center justify-center rounded-xl bg-neutral-950 text-white transition hover:bg-neutral-800"
+            className="flex aspect-square h-full items-center justify-center bg-slate-900 text-slate-100 transition hover:bg-slate-900/80"
           >
             <ArrowIcon className="w-4" />
           </button>
@@ -120,12 +110,12 @@ export function Footer() {
             <NewsletterForm />
           </div>
         </div>
-        <div className="mt-24 mb-20 flex flex-wrap items-end justify-between gap-x-6 gap-y-4 border-t border-neutral-950/10 pt-12">
+        <div className="mt-24 mb-20 flex flex-wrap items-end justify-between gap-x-6 gap-y-4 border-t border-slate-900/10 pt-12">
           <Link href="/" aria-label="Home">
             <Logo className="h-8" fillOnHover />
           </Link>
-          <p className="text-sm text-neutral-700">
-            © Studio Agency Inc. {new Date().getFullYear()}
+          <p className="text-base text-slate-700">
+            © Arhin Foundation {new Date().getFullYear()}
           </p>
         </div>
       </FadeIn>

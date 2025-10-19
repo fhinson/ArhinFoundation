@@ -1,31 +1,31 @@
 import { type Metadata } from 'next'
+import { Cormorant, Karla } from 'next/font/google'
 
 import '@/styles/tailwind.css'
-import { SiteHeader } from '@/components/SiteHeader'
-import { SiteFooter } from '@/components/SiteFooter'
-import { site } from '@/site.config'
+
+const cormorant = Cormorant({
+  subsets: ['latin'],
+  variable: '--font-cormorant',
+  display: 'swap',
+})
+
+const karla = Karla({
+  subsets: ['latin'],
+  variable: '--font-karla',
+  display: 'swap',
+})
 
 export const metadata: Metadata = {
   title: {
-    template: `%s - ${site.name}`,
-    default: `${site.name} - ${site.tagline}`,
-  },
-  description: site.seo.description,
-  openGraph: {
-    title: site.seo.title,
-    description: site.seo.description,
-    images: [site.seo.ogImage],
+    template: '%s - Arhin Foundation',
+    default: 'Arhin Foundation - A healthy mind is the foundation of a healthy life',
   },
 }
 
 export default function Layout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className="h-full bg-white text-base antialiased">
-      <body className="flex min-h-full flex-col">
-        <SiteHeader />
-        <main className="flex-auto">{children}</main>
-        <SiteFooter />
-      </body>
+    <html lang="en" className={`h-full bg-slate-50 text-base antialiased ${cormorant.variable} ${karla.variable}`}>
+      <body className="flex min-h-full flex-col">{children}</body>
     </html>
   )
 }
