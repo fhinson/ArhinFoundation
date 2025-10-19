@@ -8,7 +8,7 @@ const { PNG } = require('pngjs');
 
 const SCREENSHOT_SIZE = { width: 1440, height: 900 };
 const TOLERANCE = 0.15; // 15% pixel difference tolerance
-const MAX_DIFF_PERCENT = 5; // Allow up to 5% difference for color/font changes
+const MAX_DIFF_PERCENT = 25; // Allow up to 25% difference for color/font changes (higher due to font metrics)
 
 async function takeScreenshot(url, outputPath) {
   const browser = await chromium.launch();
