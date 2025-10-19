@@ -23,7 +23,7 @@ export function SiteFooter() {
   }
 
   return (
-    <Container as="footer" className="mt-24 w-full sm:mt-32 lg:mt-40">
+    <Container as="footer" className="w-full">
       <div>
         <div className="grid grid-cols-1 gap-x-8 gap-y-16 lg:grid-cols-3">
           {/* Navigation */}
@@ -50,17 +50,17 @@ export function SiteFooter() {
             <p className="mt-4 text-sm text-fg/70">
               Get updates on our work and impact.
             </p>
-            <form onSubmit={handleSubmit} className="mt-4">
+            <form onSubmit={handleSubmit} className="mt-6">
               <div className="flex gap-2">
                 <input
                   type="email"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   placeholder="Enter your email"
-                  className="flex-1 rounded-md border border-border bg-transparent px-3 py-2 text-sm text-fg placeholder:text-fg/50 focus:border-primary focus:outline-none focus:ring-1 focus:ring-ring"
+                  className="flex-1 rounded-full border border-border bg-transparent px-4 py-2 text-sm text-fg placeholder:text-fg/50 focus:border-primary focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2"
                   required
                 />
-                <Button type="submit" className="px-4 py-2 text-sm">
+                <Button type="submit" className="px-6 py-2 text-sm">
                   Subscribe
                 </Button>
               </div>
@@ -85,7 +85,7 @@ export function SiteFooter() {
           </div>
         </div>
         
-        <div className="mt-24 mb-20 flex flex-wrap items-end justify-between gap-x-6 gap-y-4 border-t border-border pt-12">
+        <div className="mt-16 flex flex-wrap items-end justify-between gap-x-6 gap-y-4 border-t border-border pt-8">
           <Link href="/" aria-label="Home">
             <Logo className="h-8" fillOnHover />
           </Link>

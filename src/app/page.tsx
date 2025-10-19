@@ -16,7 +16,7 @@ export const metadata: Metadata = {
 
 function WhyThisWork() {
   return (
-    <Section className="mt-24 sm:mt-32 lg:mt-40">
+    <Section>
       <div className="max-w-2xl">
             <h2 className="font-display text-3xl font-medium text-balance text-fg sm:text-4xl">
               Why This Work Matters
@@ -42,7 +42,7 @@ function WhyThisWork() {
 
 function CurrentPriority() {
   return (
-    <Section className="mt-24 sm:mt-32 lg:mt-40">
+    <Section>
       <div className="rounded-3xl bg-muted p-8 sm:p-12">
         <div>
           <h3 className="font-display text-2xl font-semibold text-fg">

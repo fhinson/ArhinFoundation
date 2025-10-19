@@ -3,8 +3,8 @@ import { Button } from '@/components/Button'
 
 export function ContactCTA() {
   return (
-    <Container className="mt-24 sm:mt-32 lg:mt-40">
-      <div className="-mx-6 rounded-4xl bg-fg px-6 py-20 sm:mx-0 sm:py-32 md:px-12">
+    <Container>
+      <div className="rounded-4xl bg-fg px-6 py-20 sm:px-12 sm:py-32">
         <div className="mx-auto max-w-4xl text-center">
           <h2 className="font-display text-3xl font-medium text-balance text-bg sm:text-4xl">
             Get In Touch

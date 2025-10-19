@@ -16,7 +16,7 @@ export const metadata: Metadata = {
 
 function FounderBio() {
   return (
-    <Section className="mt-24 sm:mt-32 lg:mt-40">
+    <Section>
       <div className="grid grid-cols-1 gap-12 lg:grid-cols-2 lg:gap-16">
         <div>
             <div>
@@ -49,7 +49,7 @@ function FounderBio() {
 
 function Affiliations() {
   return (
-    <Section className="mt-24 sm:mt-32 lg:mt-40">
+    <Section>
       <div className="rounded-4xl bg-fg py-24 sm:py-32">
         <Container>
           <div>
@@ -87,7 +87,7 @@ function Affiliations() {
 
 function ExternalLinks() {
   return (
-    <Section className="mt-24 sm:mt-32 lg:mt-40">
+    <Section>
       <div>
         <h2 className="font-display text-2xl font-semibold text-fg">
           Learn More

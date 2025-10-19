@@ -7,7 +7,7 @@ import imageFounder from '@/images/team/leslie-alexander.jpg'
 
 export function FounderSpotlight() {
   return (
-    <div className="mt-24 rounded-4xl bg-fg py-24 sm:mt-32 lg:mt-40 lg:py-32">
+    <div className="rounded-4xl bg-fg py-24 sm:py-32 lg:py-40">
       <Container>
         <div className="grid grid-cols-1 gap-12 lg:grid-cols-2 lg:gap-16">
           <div>

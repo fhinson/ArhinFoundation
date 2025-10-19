@@ -13,7 +13,7 @@ export const metadata: Metadata = {
 
 function ContactIntro() {
   return (
-    <Section className="mt-24 sm:mt-32 lg:mt-40">
+    <Section>
       <div className="max-w-2xl">
         <div>
           <h2 className="font-display text-3xl font-medium text-balance text-fg sm:text-4xl">
@@ -30,7 +30,7 @@ function ContactIntro() {
 
 function ProposalNotice() {
   return (
-    <Section className="mt-24 sm:mt-32 lg:mt-40">
+    <Section>
       <div className="rounded-3xl bg-muted p-8 sm:p-12">
         <div>
           <h3 className="font-display text-xl font-semibold text-fg">
@@ -53,7 +53,7 @@ export default function Contact() {
         subtitle="Get in touch with our team"
       />
       <ContactIntro />
-      <Section className="mt-24 sm:mt-32 lg:mt-40">
+      <Section>
         <Container>
           <div className="grid grid-cols-1 gap-x-8 gap-y-24 lg:grid-cols-2">
             <ContactForm />

@@ -15,7 +15,7 @@ export const metadata: Metadata = {
 
 function MissionIntro() {
   return (
-    <Section className="mt-24 sm:mt-32 lg:mt-40">
+    <Section>
       <div className="max-w-3xl">
         <div>
           <h2 className="font-display text-3xl font-medium text-balance text-fg sm:text-4xl">
@@ -32,8 +32,8 @@ function MissionIntro() {
 
 function PrivacyNote() {
   return (
-    <Section className="mt-24 sm:mt-32 lg:mt-40">
-      <div className="rounded-3xl bg-neutral-50 p-8 sm:p-12">
+    <Section>
+      <div className="rounded-3xl bg-muted p-8 sm:p-12">
         <div>
           <h3 className="font-display text-xl font-semibold text-fg">
             Privacy & Transparency

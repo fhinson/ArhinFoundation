@@ -31,8 +31,8 @@ const values = [
 
 export function ValueGrid() {
   return (
-    <div className="relative mt-24 rounded-4xl bg-fg py-24 sm:mt-32 lg:mt-40 lg:py-32">
-      {/* Subtle background ornament */}
+    <div className="relative rounded-4xl bg-fg py-24 sm:py-32 lg:py-40">
+      {/* Background ornament */}
       <div className="absolute inset-0 overflow-hidden rounded-4xl">
         <GridPattern
           className="absolute inset-0 h-full w-full fill-bg/5 [mask-image:radial-gradient(white,transparent_70%)]"

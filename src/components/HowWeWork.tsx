@@ -35,7 +35,7 @@ export function HowWeWork() {
             <div className="grid grid-cols-1 gap-8 lg:grid-cols-3">
               {steps.map((step) => (
                 <div key={step.number} className="flex">
-                  <div className="group relative flex w-full flex-col rounded-3xl p-6 ring-1 ring-border transition hover:bg-muted hover:ring-primary/20 sm:p-8">
+                  <div className="group relative flex w-full flex-col rounded-2xl bg-bg p-6 shadow-sm ring-1 ring-border transition hover:bg-muted hover:shadow-md sm:p-8">
                     <div className="flex items-center gap-x-4">
                       <div className="flex h-10 w-10 items-center justify-center rounded-full bg-primary text-sm font-semibold text-onprimary">
                         {step.number}

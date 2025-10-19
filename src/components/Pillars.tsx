@@ -35,7 +35,7 @@ export function Pillars() {
             <div className="grid grid-cols-1 gap-8 lg:grid-cols-3">
               {pillars.map((pillar) => (
                 <div key={pillar.percentage} className="flex">
-                  <div className="group relative flex w-full flex-col rounded-3xl p-6 ring-1 ring-border transition hover:bg-muted hover:ring-primary/20 sm:p-8">
+                  <div className="group relative flex w-full flex-col rounded-2xl bg-bg p-6 shadow-sm ring-1 ring-border transition hover:bg-muted hover:shadow-md sm:p-8">
                     <div className="flex items-center justify-between">
                       <h3 className="font-display text-2xl font-semibold text-fg">
                         {pillar.title}
