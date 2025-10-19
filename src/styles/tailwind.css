@@ -1,0 +1,73 @@
+@import 'tailwindcss';
+@import './base.css';
+@import './typography.css' layer(components);
+
+@import url('https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Karla:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
+
+:root {
+  --bg:        #F8F7F3;
+  --fg:        #0B0B0B;
+  --muted:     #EDEAE3;
+  --border:    #DCD7CE;
+
+  --primary:   #5F7F72; /* Sage */
+  --on-primary:#FFFFFF;
+
+  --accent:    #B29A5B; /* Brass */
+  --support:   #3E5A49; /* Moss */
+
+  --merlot:    #7A1E33; /* ceremonial */
+
+  --success:   #2E6D74;
+  --danger:    #7A2E34;
+  --ring:      #B29A5B; /* focus ring uses brass */
+}
+
+.dark {
+  --bg:        #0B0B0B;
+  --fg:        #F8F7F3;
+  --muted:     #171717;
+  --border:    #2A2A2A;
+}
+
+/* Optional: page variant for Mission if you want an even softer vibe */
+.theme-sage .hero { background: var(--muted); }
+.theme-merlot .accent { color: var(--merlot); border-color: color-mix(in srgb, var(--merlot) 40%, transparent); }
+
+@theme {
+  --text-*: initial;
+  --text-xs: 0.75rem;
+  --text-xs--line-height: 1rem;
+  --text-sm: 0.875rem;
+  --text-sm--line-height: 1.5rem;
+  --text-base: 1rem;
+  --text-base--line-height: 1.75rem;
+  --text-lg: 1.125rem;
+  --text-lg--line-height: 1.75rem;
+  --text-xl: 1.25rem;
+  --text-xl--line-height: 2rem;
+  --text-2xl: 1.5rem;
+  --text-2xl--line-height: 2.25rem;
+  --text-3xl: 1.75rem;
+  --text-3xl--line-height: 2.25rem;
+  --text-4xl: 2rem;
+  --text-4xl--line-height: 2.5rem;
+  --text-5xl: 2.5rem;
+  --text-5xl--line-height: 3rem;
+  --text-6xl: 3rem;
+  --text-6xl--line-height: 3.5rem;
+  --text-7xl: 4rem;
+  --text-7xl--line-height: 4.5rem;
+
+  --radius-4xl: 2.5rem;
+
+  --font-sans:
+    'Karla', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji',
+    'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+
+  --font-display:
+    'Cormorant', ui-serif, Georgia, serif, 'Apple Color Emoji',
+    'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+
+  --font-display-length: 2;
+}
