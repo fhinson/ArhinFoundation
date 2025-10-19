@@ -9,6 +9,16 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      colors: {
+        bg: "var(--bg)",
+        fg: "var(--fg)",
+        muted: "var(--muted)",
+        border: "var(--border)",
+        primary: "var(--primary)",
+        onprimary: "var(--on-primary)",
+        accent: "var(--accent)",
+        merlot: "var(--merlot)",
+      },
       fontFamily: {
         sans: ['var(--font-sans)'],
         display: ['var(--font-display)'],

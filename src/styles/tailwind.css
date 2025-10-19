@@ -7,4 +7,14 @@
 :root {
   --font-sans: 'Karla', ui-sans-serif, system-ui, sans-serif;
   --font-display: 'Cormorant', ui-serif, Georgia, serif;
+  
+  /* Brand color tokens */
+  --bg: #F8F7F3;        /* Paper */
+  --fg: #0B0B0B;        /* Ink */
+  --muted: #EDEAE3;     /* Muted paper */
+  --border: #DCD7CE;     /* Border */
+  --primary: #5F7F72;   /* Sage */
+  --on-primary: #FFFFFF;
+  --accent: #B29A5B;    /* Brass */
+  --merlot: #7A1E33;    /* Ceremonial */
 }
