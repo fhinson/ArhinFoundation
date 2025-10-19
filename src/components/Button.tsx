@@ -16,10 +16,10 @@ export function Button({
 }: ButtonProps) {
   className = clsx(
     className,
-    'inline-flex items-center justify-center rounded-full px-6 py-3 text-sm font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2',
+    'inline-flex rounded-full px-4 py-1.5 text-sm font-semibold transition focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2',
     invert
-      ? 'bg-bg text-fg hover:bg-muted border border-border'
-      : 'bg-primary text-onprimary hover:bg-primary/90',
+      ? 'bg-white text-neutral-950 hover:bg-neutral-100'
+      : 'bg-blue-600 text-white hover:bg-blue-500',
   )
 
   let inner = <span className="relative top-px">{children}</span>

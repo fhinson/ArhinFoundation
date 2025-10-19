@@ -10,9 +10,7 @@ export function Section({ children, className, as: Component = 'section' }: Sect
   return (
     <Component className={className}>
       <Container>
-        <div className="py-16 sm:py-20 lg:py-24">
-          {children}
-        </div>
+        {children}
       </Container>
     </Component>
   )
