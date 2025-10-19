@@ -4,6 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
+    "img:cutout": "node scripts/remove-bg.mjs public/hero-child.jpg public/hero-child-cutout.png",
     "build": "next build",
     "start": "next start",
     "lint": "next lint"

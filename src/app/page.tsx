@@ -12,39 +12,72 @@ import { Testimonial } from '@/components/Testimonial'
 import logoPhobiaDark from '@/images/clients/phobia/logo-dark.svg'
 import imageLaptop from '@/images/laptop.jpg'
 import { RootLayout } from '@/components/RootLayout'
+import { DigitalMaskedImage } from '@/components/DigitalMaskedImage'
+import { Button } from '@/components/Button'
 
-const focusAreas = [
-  ['Access', 'Move people from waitlists to care: therapy funds, clinics, provider networks.'],
-  ['Talent', 'Train and support clinicians: scholarships, supervision, fellowships.'],
-  ['Stigma', 'Make help-seeking normal: consent-first creator micro-grants.'],
-]
+// Removed previous focus area bullets; replaced with stories grid inside the blue section
 
 function FocusAreas() {
   return (
     <div className="mt-24 bg-slate-900 py-20 sm:mt-32 sm:py-32 lg:mt-56">
-      <Container>
-        <FadeIn className="flex items-center gap-x-8">
-              <h2 className="text-center font-display text-lg font-semibold tracking-wider text-white sm:text-left">
-                Focus area
-              </h2>
-          <div className="h-px flex-auto bg-slate-200/20" />
+      <SectionIntro
+        invert
+        title="We believe everyone deserves access to quality mental health care. We're here to support you through your journey—quietly removing barriers so help feels close to home."
+      >
+        <p>
+          Access should be timely, affordable, and culturally aware. Strong communities need strong minds. Change scales when we back people and proven programs.
+        </p>
+      </SectionIntro>
+      <Container className="mt-12">
+        <FadeIn>
+          <h2 className="text-center font-sans text-xs sm:text-sm font-bold tracking-tight text-white sm:text-left">
+            Our Focus Areas
+          </h2>
         </FadeIn>
-        <FadeInStagger faster>
-          <ul
-            role="list"
-            className="mt-10 grid grid-cols-1 gap-x-8 gap-y-10 lg:grid-cols-3"
-          >
-            {focusAreas.map(([area, description]) => (
-              <li key={area} className="text-center">
-                <FadeIn>
-                  <div className="text-white">
-                    <h3 className="font-display text-lg font-semibold text-white">{area}</h3>
-                    <p className="mt-2 text-base text-white/70">{description}</p>
+        <FadeInStagger className="grid grid-cols-1 gap-8 lg:grid-cols-3">
+          {[
+            {
+              title: 'Therapy Fund Expansion',
+              description:
+                'Supported 15 community clinics to reduce wait times from 6 months to 2 weeks, serving 2,000+ individuals.',
+              category: 'Access',
+              year: '2024',
+            },
+            {
+              title: 'Clinical Fellowship Program',
+              description:
+                'Launched fellowship program training 25 new clinicians in culturally-responsive mental health care.',
+              category: 'Talent',
+              year: '2024',
+            },
+            {
+              title: 'Stigma Reduction Campaign',
+              description:
+                'Partnered with content creators to normalize mental health conversations, reaching 1M+ young adults.',
+              category: 'Stigma',
+              year: '2023',
+            },
+          ].map((story) => (
+            <FadeIn key={story.title} className="flex">
+              <article className="relative flex w-full flex-col p-6 ring-1 ring-white/10 transition hover:bg-white/5 sm:p-8">
+                <div className="flex items-center gap-3 mb-4">
+                  <div className="h-12 w-12 bg-white/10 flex items-center justify-center">
+                    <span className="text-white font-semibold text-sm">{story.category.charAt(0)}</span>
                   </div>
-                </FadeIn>
-              </li>
-            ))}
-          </ul>
+                  <div>
+                    <p className="text-sm font-semibold text-white">{story.category}</p>
+                    <p className="text-sm text-white/60">{story.year}</p>
+                  </div>
+                </div>
+                <h3 className="font-display text-3xl font-semibold text-white mb-4">
+                  {story.title}
+                </h3>
+                <p className="text-lg text-white/70">
+                  {story.description}
+                </p>
+              </article>
+            </FadeIn>
+          ))}
         </FadeInStagger>
       </Container>
     </div>
@@ -75,39 +108,7 @@ function ImpactStories() {
 
   return (
     <>
-      <SectionIntro
-        title="We believe everyone deserves access to quality mental health care. We're here to support you through your journey—quietly removing barriers so help feels close to home."
-        className="mt-24 sm:mt-32 lg:mt-40"
-      >
-        <p>
-          Access should be timely, affordable, and culturally aware. Strong communities need strong minds. Change scales when we back people and proven programs.
-        </p>
-      </SectionIntro>
-      <Container className="mt-16">
-        <FadeInStagger className="grid grid-cols-1 gap-8 lg:grid-cols-3">
-          {stories.map((story) => (
-            <FadeIn key={story.title} className="flex">
-              <article className="relative flex w-full flex-col p-6 ring-1 ring-slate-900/10 transition hover:bg-slate-100 sm:p-8">
-                <div className="flex items-center gap-3 mb-4">
-                  <div className="h-12 w-12 bg-slate-800 flex items-center justify-center">
-                    <span className="text-white font-semibold text-sm">{story.category.charAt(0)}</span>
-                  </div>
-                  <div>
-                    <p className="text-sm font-semibold text-slate-900">{story.category}</p>
-                    <p className="text-sm text-slate-700/60">{story.year}</p>
-                  </div>
-                </div>
-                <h3 className="font-display text-3xl font-semibold text-slate-900 mb-4">
-                  {story.title}
-                </h3>
-                <p className="text-lg text-slate-700/70">
-                  {story.description}
-                </p>
-              </article>
-            </FadeIn>
-          ))}
-        </FadeInStagger>
-      </Container>
+      {/* stories moved into FocusAreas above for dark background section */}
     </>
   )
 }
@@ -158,20 +159,46 @@ export const metadata: Metadata = {
 export default function Home() {
   return (
     <RootLayout>
-      <Container className="mt-24 sm:mt-32 md:mt-56">
-        <FadeIn className="max-w-3xl">
-              <h1 className="font-display text-5xl font-medium tracking-tight text-balance text-slate-900 sm:text-7xl">
-            A healthy mind is the foundation of a healthy life.
-          </h1>
-          <p className="mt-6 text-2xl text-slate-700/70">
-            Everyone deserves to dream.
-          </p>
-        </FadeIn>
+      <Container className="mt-6 sm:mt-8 md:mt-10">
+        <div className="relative grid items-center gap-y-4 sm:gap-y-6 gap-x-6 lg:grid-cols-2">
+          <FadeIn className="max-w-2xl">
+            <h1 className="font-display text-5xl font-medium tracking-tight text-balance text-slate-900 sm:text-7xl">
+              A healthy mind is the foundation of a healthy life.
+            </h1>
+            <p className="mt-6 text-2xl text-slate-700/70">
+              Everyone deserves to dream.
+            </p>
+            <div className="mt-8">
+              <Button href="/contact" size="lg">Get in touch</Button>
+            </div>
+          </FadeIn>
+          <FadeIn className="relative z-0 mt-4 sm:mt-6">
+            <div className="pointer-events-none absolute inset-0 -z-10" />
+            <div className="group mx-auto">
+              <div className="relative mx-auto">
+                <DigitalMaskedImage
+                  src="/hero-child-subject.png"
+                  alt="Smiling child looking upward."
+                  width={1200}
+                  height={1600}
+                  priority
+                  sizes="(min-width: 1024px) 28rem, 22rem"
+                  className="mx-auto w-[24rem] sm:w-[26rem] lg:w-[28rem]"
+                  objectPosition="50% 50%"
+                  fadeFrom={260}
+                  ovalLift={72}
+                  ovalRxScale={0.44}
+                  ovalRyScale={0.42}
+                  flipHorizontal
+                />
+              </div>
+            </div>
+          </FadeIn>
+        </div>
       </Container>
 
       <FocusAreas />
 
-      <ImpactStories />
 
       <Testimonial
         className="mt-24 sm:mt-32 lg:mt-40"

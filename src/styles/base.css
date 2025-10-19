@@ -11,3 +11,54 @@
 * {
   border-radius: 0 !important;
 }
+
+/* Prominent digital accent (blue grid + scanlines, subtle) */
+.digital-accent::before,
+.digital-accent::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+.digital-accent::before {
+  background-image:
+    linear-gradient(rgba(29, 78, 216, 0.09) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(29, 78, 216, 0.09) 1px, transparent 1px);
+  background-size: 8px 8px, 8px 8px; /* denser grid */
+  mix-blend-mode: screen;
+}
+.digital-accent::after {
+  background-image: linear-gradient(rgba(29, 78, 216, 0.07) 1px, transparent 1px);
+  background-size: 100% 2px; /* finer scanlines */
+  mix-blend-mode: screen;
+}
+
+/* Digital treatment for hero cutout image */
+.digital-effect {
+  position: relative;
+}
+.digital-effect::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-image:
+    linear-gradient(rgba(29, 78, 216, 0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(29, 78, 216, 0.08) 1px, transparent 1px);
+  background-size: 12px 12px, 12px 12px; /* grid */
+  mix-blend-mode: screen;
+}
+.digital-effect::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-image: linear-gradient(rgba(29, 78, 216, 0.06) 1px, transparent 1px);
+  background-size: 100% 3px; /* scanlines */
+  mix-blend-mode: screen;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .digital-effect:hover img { transform: translateY(-2px) scale(1.02); }
+  .digital-effect img { transition: transform 300ms ease; }
+}

@@ -21,10 +21,7 @@ export function Testimonial({
         className,
       )}
     >
-      <GridPattern
-        className="absolute inset-0 -z-10 h-full w-full mask-[linear-gradient(to_bottom_left,white_50%,transparent_60%)] fill-neutral-100 stroke-neutral-950/5"
-        yOffset={-256}
-      />
+      {/* Background pattern removed for quote section */}
       <Container>
         <FadeIn>
           <figure className="mx-auto max-w-4xl">

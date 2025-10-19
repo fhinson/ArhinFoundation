@@ -13,6 +13,8 @@ const CALIBRATION_Y = -2
 // Circle drawing radius and hover activation radius (smaller than full circle)
 const RADIUS = 20
 const ACTIVATE_RADIUS = Math.floor(RADIUS * 0.8)
+const HOVER_FILL_R = Math.max(1, RADIUS - 2)
+const STATIC_FILL_R = Math.max(1, RADIUS - 3)
 
 // (Removed old trapezoid Block; we use circles now.)
 
@@ -20,7 +22,7 @@ const ACTIVATE_RADIUS = Math.floor(RADIUS * 0.8)
 function Circle({
   x,
   y,
-  r = 20,
+  r = RADIUS,
   ...props
 }: Omit<React.ComponentPropsWithoutRef<typeof motion.circle>, 'x' | 'y'> & {
   x: number
@@ -141,7 +143,7 @@ export function GridPattern({
             fill="none"
             stroke="currentColor"
             strokeWidth={1}
-            opacity={0.14}
+            opacity={0.102}
             vectorEffect="non-scaling-stroke"
           />
         ))}
@@ -153,7 +155,8 @@ export function GridPattern({
             x={block[0]}
             y={block[1]}
             fill="currentColor"
-            opacity={0.04}
+            opacity={0.029}
+            r={STATIC_FILL_R}
           />
         ))}
 
@@ -164,7 +167,8 @@ export function GridPattern({
             x={block[0]}
             y={block[1]}
             fill="currentColor"
-            animate={{ opacity: [0, 0.12, 0] }}
+            r={HOVER_FILL_R}
+            animate={{ opacity: [0, 0.085, 0] }}
             transition={{ duration: 1, times: [0, 0, 1] }}
             onAnimationComplete={() => {
               setHoveredBlocks((blocks) =>
