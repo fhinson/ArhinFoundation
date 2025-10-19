@@ -3,7 +3,7 @@
 const { chromium } = require('playwright');
 const fs = require('fs');
 const path = require('path');
-const pixelmatch = require('pixelmatch');
+const pixelmatch = require('pixelmatch').default || require('pixelmatch');
 const { PNG } = require('pngjs');
 
 const SCREENSHOT_SIZE = { width: 1440, height: 900 };
