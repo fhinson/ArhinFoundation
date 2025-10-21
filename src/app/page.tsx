@@ -12,14 +12,13 @@ import { Testimonial } from '@/components/Testimonial'
 import logoPhobiaDark from '@/images/clients/phobia/logo-dark.svg'
 import imageLaptop from '@/images/laptop.jpg'
 import { RootLayout } from '@/components/RootLayout'
-import { DigitalMaskedImage } from '@/components/DigitalMaskedImage'
 import { Button } from '@/components/Button'
 
 // Removed previous focus area bullets; replaced with stories grid inside the blue section
 
 function FocusAreas() {
   return (
-    <div className="mt-24 bg-slate-900 py-20 sm:mt-32 sm:py-32 lg:mt-56">
+    <div className="mt-12 bg-slate-900 py-16 sm:mt-16 sm:py-24 lg:mt-20 lg:py-28">
       <SectionIntro
         invert
         title="We believe everyone deserves access to quality mental health care. We're here to support you through your journey—quietly removing barriers so help feels close to home."
@@ -28,13 +27,8 @@ function FocusAreas() {
           Access should be timely, affordable, and culturally aware. Strong communities need strong minds. Change scales when we back people and proven programs.
         </p>
       </SectionIntro>
-      <Container className="mt-12">
-        <FadeIn>
-          <h2 className="text-center font-sans text-xs sm:text-sm font-bold tracking-tight text-white sm:text-left">
-            Our Focus Areas
-          </h2>
-        </FadeIn>
-        <FadeInStagger className="grid grid-cols-1 gap-8 lg:grid-cols-3">
+      <Container className="mt-8 sm:mt-10">
+        <FadeInStagger className="mt-6 sm:mt-8 grid grid-cols-1 gap-10 lg:grid-cols-3">
           {[
             {
               title: 'Therapy Fund Expansion',
@@ -57,16 +51,12 @@ function FocusAreas() {
               category: 'Stigma',
               year: '2023',
             },
-          ].map((story) => (
+          ].map((story, idx) => (
             <FadeIn key={story.title} className="flex">
               <article className="relative flex w-full flex-col p-6 ring-1 ring-white/10 transition hover:bg-white/5 sm:p-8">
-                <div className="flex items-center gap-3 mb-4">
-                  <div className="h-12 w-12 bg-white/10 flex items-center justify-center">
-                    <span className="text-white font-semibold text-sm">{story.category.charAt(0)}</span>
-                  </div>
-                  <div>
-                    <p className="text-sm font-semibold text-white">{story.category}</p>
-                    <p className="text-sm text-white/60">{story.year}</p>
+                <div className="mb-4">
+                  <div className="inline-flex items-center justify-center rounded-sm bg-white/10 px-3 py-1.5 text-white font-semibold text-xs">
+                    Focus Area
                   </div>
                 </div>
                 <h3 className="font-display text-3xl font-semibold text-white mb-4">
@@ -159,7 +149,9 @@ export const metadata: Metadata = {
 export default function Home() {
   return (
     <RootLayout>
-      <Container className="mt-6 sm:mt-8 md:mt-10">
+      {/* Removed full-bleed gradient per design update */}
+      <div className="relative pt-6 sm:pt-8 md:pt-10">
+        <Container>
         <div className="relative grid items-center gap-y-4 sm:gap-y-6 gap-x-6 lg:grid-cols-2">
           <FadeIn className="max-w-2xl">
             <h1 className="font-display text-5xl font-medium tracking-tight text-balance text-slate-900 sm:text-7xl">
@@ -172,36 +164,29 @@ export default function Home() {
               <Button href="/contact" size="lg">Get in touch</Button>
             </div>
           </FadeIn>
-          <FadeIn className="relative z-0 mt-4 sm:mt-6">
-            <div className="pointer-events-none absolute inset-0 -z-10" />
-            <div className="group mx-auto">
-              <div className="relative mx-auto">
-                <DigitalMaskedImage
-                  src="/hero-child-subject.png"
-                  alt="Smiling child looking upward."
-                  width={1200}
-                  height={1600}
-                  priority
-                  sizes="(min-width: 1024px) 28rem, 22rem"
-                  className="mx-auto w-[24rem] sm:w-[26rem] lg:w-[28rem]"
-                  objectPosition="50% 50%"
-                  fadeFrom={260}
-                  ovalLift={72}
-                  ovalRxScale={0.44}
-                  ovalRyScale={0.42}
-                  flipHorizontal
-                />
-              </div>
+          <FadeIn className="relative z-0 mt-6 sm:mt-8">
+            <div className="relative mx-auto w-[24rem] sm:w-[26rem] lg:w-[28rem] overflow-hidden rounded-3xl">
+              <Image
+                src="/child.png"
+                alt="Child"
+                width={1200}
+                height={1600}
+                priority
+                sizes="(min-width: 1024px) 28rem, 22rem"
+                className="h-auto w-full object-cover"
+                style={{ objectPosition: '50% 50%' }}
+              />
             </div>
           </FadeIn>
         </div>
-      </Container>
+        </Container>
+      </div>
 
       <FocusAreas />
 
 
       <Testimonial
-        className="mt-24 sm:mt-32 lg:mt-40"
+        className="mt-8 sm:mt-10"
         client={{ name: 'Arhin Foundation', logo: logoPhobiaDark }}
       >
         We back practical access, develop talent, and reduce stigma—quietly removing friction so help feels close to home.
