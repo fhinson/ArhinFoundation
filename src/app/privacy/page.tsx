@@ -1,5 +1,5 @@
 import { SiteHeader } from '@/components/SiteHeader'
-import { SiteFooter } from '@/components/SiteFooter'
+import { Footer } from '@/components/Footer'
 import { Container } from '@/components/Container'
 import { FadeIn } from '@/components/FadeIn'
 
@@ -64,7 +64,7 @@ export default function PrivacyPage() {
           </div>
         </FadeIn>
       </Container>
-      <SiteFooter />
+      <Footer />
     </>
   )
 }

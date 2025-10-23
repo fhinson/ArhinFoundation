@@ -9,7 +9,7 @@ const navigation = [
   {
     title: 'Foundation',
     links: [
-      { title: 'Our Mission', href: '/mission' },
+      { title: 'Our Mission', href: '/#mission' },
       { title: 'About Us', href: '/about' },
       { title: 'Donate', href: '/donate' },
     ],
@@ -18,7 +18,7 @@ const navigation = [
     title: 'Connect',
     links: [
       { title: 'Contact Us', href: '/contact' },
-      { title: 'Instagram', href: 'https://instagram.com' },
+      { title: 'Instagram', href: 'https://instagram.com/arhinfoundation' },
     ],
   },
   {

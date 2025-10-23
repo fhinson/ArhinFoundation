@@ -14,7 +14,7 @@ export function DonateSection() {
             <p className="mt-6 text-xl text-white">
               Every dollar you give helps a child access the mental health care they need. Your support turns waiting lists into healing, and uncertainty into hope.
             </p>
-            <div className="mt-6 flex">
+            <div className="mt-8 flex">
               <Button href="/donate" invert className="px-8 py-4 text-xl">
                 Donate Now →
               </Button>

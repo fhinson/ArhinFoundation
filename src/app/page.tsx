@@ -15,7 +15,7 @@ import { Button } from '@/components/Button'
 
 function FocusAreas() {
   return (
-    <div id="our-mission" className="mt-12 bg-slate-900 py-16 sm:mt-16 sm:py-24 lg:mt-20 lg:py-28">
+    <div id="mission" className="mt-12 bg-slate-900 py-16 sm:mt-16 sm:py-24 lg:mt-20 lg:py-28">
       <Container>
         {/* Section Eyebrow */}
         <div className="mb-8">
@@ -200,11 +200,11 @@ export default function Home() {
             </p>
             <div className="mt-8">
               <Button
-                href="#our-mission"
+                href="#mission"
                 size="lg"
                 onClick={(e: React.MouseEvent<HTMLAnchorElement>) => {
                   e.preventDefault()
-                  document.getElementById('our-mission')?.scrollIntoView({
+                  document.getElementById('mission')?.scrollIntoView({
                     behavior: 'smooth',
                     block: 'start'
                   })
