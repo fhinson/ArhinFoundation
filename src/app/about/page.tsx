@@ -60,7 +60,12 @@ function FounderStory() {
   )
 }
 
-const affiliations = [
+const affiliations: Array<{
+  organization: string
+  role: string
+  description: string
+  period: string
+}> = [
   // Partner logos will be added here
 ]
 
