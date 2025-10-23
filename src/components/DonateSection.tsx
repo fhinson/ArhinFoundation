@@ -1,12 +1,17 @@
 import { Button } from '@/components/Button'
 import { Container } from '@/components/Container'
 import { FadeIn } from '@/components/FadeIn'
+import { Logomark } from '@/components/Logo'
 
 export function DonateSection() {
   return (
     <Container className="mt-24 sm:mt-32 lg:mt-40">
-      <FadeIn className="-mx-6 bg-fg px-6 py-20 sm:mx-0 sm:py-32 md:px-12">
-        <div className="mx-auto max-w-4xl">
+      <FadeIn className="relative -mx-6 bg-fg px-6 py-20 sm:mx-0 sm:py-32 md:px-12">
+        {/* Decorative monogram in top right */}
+        <div className="absolute top-4 right-4 sm:top-8 sm:right-8 opacity-10">
+          <Logomark className="h-12 w-auto sm:h-24 sm:w-auto" invert />
+        </div>
+        <div className="mx-auto max-w-4xl relative">
           <div className="max-w-xl">
             <h2 className="font-display text-4xl font-medium text-balance text-white sm:text-5xl">
               Make a difference today

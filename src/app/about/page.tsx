@@ -11,13 +11,18 @@ import { PageIntro } from '@/components/PageIntro'
 import { PageLinks } from '@/components/PageLinks'
 import { SectionIntro } from '@/components/SectionIntro'
 import { StatList, StatListItem } from '@/components/StatList'
+import { Logomark } from '@/components/Logo'
 import imageLaptop from '@/images/laptop.jpg'
 import { loadArticles } from '@/lib/mdx'
 import { RootLayout } from '@/components/RootLayout'
 
 function FounderStory() {
   return (
-    <div className="mt-24 bg-fg py-24 sm:mt-32 lg:mt-40 lg:py-32">
+    <div className="relative mt-24 bg-fg py-24 sm:mt-32 lg:mt-40 lg:py-32">
+      {/* Decorative monogram in top right */}
+      <div className="absolute top-4 right-4 sm:top-8 sm:right-8 opacity-10">
+        <Logomark className="h-12 w-auto sm:h-24 sm:w-auto" invert />
+      </div>
       <SectionIntro
         eyebrow="About the founder"
         title="Francis Kumi Arhin"

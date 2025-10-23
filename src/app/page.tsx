@@ -190,12 +190,12 @@ export default function Home() {
       {/* Removed full-bleed gradient per design update */}
       <div className="relative pt-16 sm:pt-20 md:pt-24 pb-6 sm:pb-10 md:pb-14">
         <Container>
-        <div className="relative grid grid-cols-[1fr_auto] lg:grid-cols-2 gap-x-6">
-          <FadeIn className="max-w-2xl lg:max-w-none">
+        <div className="relative sm:grid sm:grid-cols-[1fr_auto] lg:grid-cols-2 gap-x-6">
+          <FadeIn className="w-full lg:max-w-none">
             <h1 className="font-display text-6xl font-medium tracking-tight text-balance text-slate-900 sm:text-7xl">
               We believe a healthy mind is the foundation of a healthy life.
             </h1>
-            <p className="mt-6 text-xl sm:text-2xl text-slate-900">
+            <p className="mt-6 text-xl sm:text-2xl text-balance text-slate-900">
               We invest in youth mental health care in New York City, because every child deserves to dream.
             </p>
             <div className="mt-8">

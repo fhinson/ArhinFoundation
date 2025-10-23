@@ -7,7 +7,7 @@ import clsx from 'clsx'
 import { motion, useReducedMotion } from 'framer-motion'
 
 import { Container } from '@/components/Container'
-import { Logo } from '@/components/Logo'
+import { Logo, Logomark } from '@/components/Logo'
 import { Button } from '@/components/Button'
 import { site } from '@/site.config'
 
@@ -39,7 +39,7 @@ export function SiteHeader() {
         <div className="flex items-center justify-between py-6">
           {/* Logo */}
           <Link href="/" className="flex items-center">
-            <Logo className="h-8" invert />
+            <Logo className="h-9 sm:h-10" invert />
           </Link>
 
           {/* Desktop Navigation */}
@@ -94,7 +94,7 @@ export function SiteHeader() {
           onClick={(e) => e.stopPropagation()}
         >
           <div className="flex items-center justify-between p-6">
-            <Logo className="h-8" invert={false} />
+            <Logo className="h-9 sm:h-10" invert={false} />
             <button
               type="button"
               className="-m-2.5 rounded-md p-2.5 text-fg hover:text-fg/80 focus:outline-none focus:ring-2 focus:ring-ring"

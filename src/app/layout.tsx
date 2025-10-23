@@ -18,7 +18,7 @@ const karla = Karla({
 export const metadata: Metadata = {
   title: {
     template: '%s - Arhin Foundation',
-    default: 'Arhin Foundation - A healthy mind is the foundation of a healthy life',
+    default: 'Arhin Foundation - A Healthy Mind Is the Foundation of a Healthy Life',
   },
 }
 
@@ -35,7 +35,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
               name: 'Arhin Foundation',
               url: 'https://arhin.org',
               logo: 'https://arhin.org/logo.png',
-              slogan: 'A healthy mind is the foundation of a healthy life.',
+              slogan: 'A Healthy Mind Is the Foundation of a Healthy Life.',
               missionStatement:
                 'We support youth mental health access by removing friction to care and backing the people who deliver it.',
               areaServed: 'New York City metropolitan area',
