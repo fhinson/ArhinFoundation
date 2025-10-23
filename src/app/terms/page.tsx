@@ -33,14 +33,14 @@ export default function TermsPage() {
             <section>
               <h2 className="text-2xl font-semibold text-slate-900 mb-4">Use of Website</h2>
               <p>
-                This website is provided for informational purposes about the Arhin Foundation's mission, programs, and activities. You may use this website for lawful purposes only.
+                This website is provided for informational purposes about the Arhin Foundation&apos;s mission, programs, and activities. You may use this website for lawful purposes only.
               </p>
             </section>
 
             <section>
               <h2 className="text-2xl font-semibold text-slate-900 mb-4">Donations</h2>
               <p>
-                All donations made through this website are voluntary and will be used to support the Arhin Foundation's mission of improving youth mental health care access. Donations are processed securely through trusted third-party payment processors.
+                All donations made through this website are voluntary and will be used to support the Arhin Foundation&apos;s mission of improving youth mental health care access. Donations are processed securely through trusted third-party payment processors.
               </p>
             </section>
 
