@@ -4,10 +4,10 @@ export const site = {
   subtagline: "Everyone deserves to dream.",
   nav: [
     { label: "Home", href: "/" },
-    { label: "Mission", href: "/mission" },
     { label: "About", href: "/about" },
     { label: "Contact", href: "/contact" },
   ],
+  cta: { label: "Donate", href: "/donate" },
   colors: {
     // Surfaces & text
     bg:        "#F8F7F3", // paper

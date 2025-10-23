@@ -1,4 +1,5 @@
 import { type Metadata } from 'next'
+import Link from 'next/link'
 
 import { Container } from '@/components/Container'
 import { FadeIn, FadeInStagger } from '@/components/FadeIn'
@@ -9,8 +10,8 @@ import { StatList, StatListItem } from '@/components/StatList'
 import { RootLayout } from '@/components/RootLayout'
 
 export const metadata: Metadata = {
-  title: 'Our Mission',
-  description: 'We advance timely, culturally aware mental-health support. We remove friction to quality care and back the people who deliver it.',
+  title: 'Our Mission | Arhin Foundation',
+  description: 'We advance timely, culturally aware youth mental-health support by funding access, talent, and stigma reduction.',
 }
 
 function WhatWeFund() {
@@ -27,15 +28,9 @@ function WhatWeFund() {
       </SectionIntro>
       <Container className="mt-16">
         <GridList>
-          <GridListItem title="Access">
-            Direct support that moves people from waitlists to care.
-          </GridListItem>
-          <GridListItem title="Talent">
-            Scholarships, training, and supervision for clinicians.
-          </GridListItem>
-          <GridListItem title="Stigma">
-            Programs and content that make seeking help normal.
-          </GridListItem>
+          <GridListItem title="Access">Direct support that moves young people from waitlists to care (sessions, clinic capacity).</GridListItem>
+          <GridListItem title="Talent">Supervision, training, and early-career support for clinicians.</GridListItem>
+          <GridListItem title="Stigma">Consent-first programs and content that make seeking help normal.</GridListItem>
         </GridList>
       </Container>
     </Container>
@@ -57,6 +52,7 @@ function PortfolioEmphasis() {
           <StatListItem value="20%" label="Talent — training, supervision, fellowships" />
           <StatListItem value="10%" label="Stigma — consent-first creator micro-grants" />
         </StatList>
+        <p className="mt-6 text-base text-neutral-600">Initial allocation: 70% Access · 20% Talent · 10% Stigma</p>
       </Container>
     </Container>
   )
@@ -116,10 +112,13 @@ function LookingAhead() {
 export default function Mission() {
   return (
     <RootLayout>
-      <PageIntro eyebrow="Our mission" title="Our mission">
+      <PageIntro eyebrow="Our mission" title="Our Mission">
         <p>
-          We advance timely, culturally aware mental-health support. We remove friction to quality care and back the people who deliver it—so more lives feel steady and free to pursue ambition.
+          We advance timely, culturally aware mental-health support for children. We remove friction to quality care and back the people who deliver it—so more young lives feel steady and free to pursue ambition.
         </p>
+        <div className="mt-6 text-base text-neutral-600">
+          <p><Link href="/work" className="underline">See our specific targets in Our Work</Link>. <Link href="/about" className="underline">About Francis Kumi Arhin</Link>.</p>
+        </div>
       </PageIntro>
 
       <WhatWeFund />

@@ -26,7 +26,9 @@ export function Button({
   className = clsx(
     'inline-flex font-semibold transition',
     sizeClasses,
-    invert ? 'bg-slate-800 text-white hover:bg-slate-700' : 'bg-slate-800 text-white hover:bg-slate-700',
+    invert
+      ? 'bg-white text-slate-900 hover:bg-slate-50 border border-slate-200'
+      : 'bg-slate-800 text-white hover:bg-slate-700',
     className,
   )
 

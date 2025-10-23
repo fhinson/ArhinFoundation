@@ -25,6 +25,33 @@ export const metadata: Metadata = {
 export default function Layout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" className={`h-full bg-slate-50 text-base antialiased ${cormorant.variable} ${karla.variable}`}>
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              '@context': 'https://schema.org',
+              '@type': 'Organization',
+              name: 'Arhin Foundation',
+              url: 'https://arhin.org',
+              logo: 'https://arhin.org/logo.png',
+              slogan: 'A healthy mind is the foundation of a healthy life.',
+              missionStatement:
+                'We support youth mental health access by removing friction to care and backing the people who deliver it.',
+              areaServed: 'New York City metropolitan area',
+              foundingDate: '2025',
+              founder: {
+                '@type': 'Person',
+                name: 'Francis Kumi Arhin',
+                alternateName: 'Kumi Arhin',
+                url: 'https://arhin.org/about',
+                jobTitle: 'Founder',
+              },
+              sameAs: ['https://oforibrothers.com'],
+            }),
+          }}
+        />
+      </head>
       <body className="flex min-h-full flex-col">{children}</body>
     </html>
   )

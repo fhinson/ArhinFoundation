@@ -3,18 +3,26 @@
 @import './typography.css' layer(components);
 
 :root {
-  /* Brand Colors - Merlot & Ivory Palette */
+  /* Brand Colors - Brass Palette */
   --bg: #fefdf8; /* Warm Ivory - main background */
   --fg: #2c1810; /* Rich Brown - primary text */
   --muted: #f7f4f0; /* Soft Ivory - muted backgrounds */
   --border: #e8ddd4; /* Warm border */
   --primary: #722f37; /* Merlot - primary CTAs */
   --on-primary: #fefdf8; /* Ivory text on Merlot */
-  --accent: #8b4513; /* Saddle Brown - accents */
-  --merlot: #722f37; /* Merlot - brand color */
-  --merlot-light: #8b4a52; /* Lighter Merlot for hover states */
-  --ivory: #fefdf8; /* Pure Ivory */
-  --ivory-dark: #f5f1e8; /* Darker Ivory for subtle contrast */
+
+  --brass: #B08D57;        /* Old Brass (base) */
+  --brass-deep: #8A6C3A;   /* Pressed/active */
+  --brass-hover: #9C7B43;  /* Hover */
+  --brass-tint: #EFE6D6;   /* Subtle backgrounds / chips */
+  --brass-outline: #6E522A;/* Hairlines, borders */
+  --brass-shadow: 0 10px 20px rgba(176,141,87,0.18);
+
+  /* Semantic */
+  --accent: var(--brass);
+  --accent-foreground: #0f172a; /* text on brass */
+  --accent-ghost: rgba(176,141,87,0.10);
+  --focus-ring: rgba(176,141,87,0.45);
 }
 
 /* Ensure CSS variables are available globally */
@@ -25,11 +33,19 @@ html {
   --border: #e8ddd4;
   --primary: #722f37;
   --on-primary: #fefdf8;
-  --accent: #8b4513;
-  --merlot: #722f37;
-  --merlot-light: #8b4a52;
-  --ivory: #fefdf8;
-  --ivory-dark: #f5f1e8;
+
+  --brass: #B08D57;
+  --brass-deep: #8A6C3A;
+  --brass-hover: #9C7B43;
+  --brass-tint: #EFE6D6;
+  --brass-outline: #6E522A;
+  --brass-shadow: 0 10px 20px rgba(176,141,87,0.18);
+
+  /* Semantic */
+  --accent: var(--brass);
+  --accent-foreground: #0f172a;
+  --accent-ghost: rgba(176,141,87,0.10);
+  --focus-ring: rgba(176,141,87,0.45);
 }
 
 @theme {
@@ -68,4 +84,21 @@ html {
   --font-display--font-variation-settings: 'wdth' 125;
 
   --font-display-length: 2;
+
+  /* Custom colors */
+  --color-brass: #B08D57;
+  --color-brass-deep: #8A6C3A;
+  --color-brass-hover: #9C7B43;
+  --color-brass-tint: #EFE6D6;
+  --color-merlot: #722f37;
+  --color-merlot-light: #8b4a52;
+  --color-ivory: #fefdf8;
+  --color-ivory-dark: #f5f1e8;
+  --color-bg: #fefdf8;
+  --color-fg: #2c1810;
+  --color-muted: #f7f4f0;
+  --color-border: #e8ddd4;
+  --color-primary: #722f37;
+  --color-on-primary: #fefdf8;
+  --color-accent: #B08D57;
 }

@@ -31,9 +31,13 @@ export function ListItem({
       <FadeIn>
         <Border className="pt-10 group-first:pt-0 group-first:before:hidden group-first:after:hidden">
           {title && (
-            <strong className="font-semibold text-neutral-950">{`${title}. `}</strong>
+            <div className="mb-4 font-sans text-sm font-semibold uppercase tracking-wider text-neutral-950">
+              {title}
+            </div>
           )}
-          {children}
+          <div className="font-display text-2xl text-neutral-950">
+            {children}
+          </div>
         </Border>
       </FadeIn>
     </li>

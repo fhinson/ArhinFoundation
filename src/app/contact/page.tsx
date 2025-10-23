@@ -87,9 +87,9 @@ function ContactForm() {
         <Button type="submit" className="mt-10">
           Send message
         </Button>
-        <p className="mt-6 text-sm text-neutral-600">
-          We're not accepting unsolicited proposals at this time, but we read each message and follow up when there's a fit.
-        </p>
+        <p className="mt-6 text-sm text-neutral-600">Response time: We typically respond within 2–3 business days.</p>
+        <p className="mt-2 text-sm text-neutral-600">Privacy: All communications are confidential. We respect your privacy and will not share your information.</p>
+        <p className="mt-2 text-sm text-neutral-600">Disclaimer: We are not accepting unsolicited proposals at this time, but we read each message and follow up when there’s a fit.</p>
       </form>
     </FadeIn>
   )
@@ -102,7 +102,7 @@ function ContactDetails() {
         About our process
       </h2>
       <p className="mt-6 text-base text-neutral-600">
-        We review every message carefully and respond when there's alignment with our mission and approach.
+        We review every message carefully and respond when there&rsquo;s alignment with our mission and approach.
       </p>
 
       <Border className="mt-16 pt-16">
@@ -127,19 +127,24 @@ function ContactDetails() {
 }
 
 export const metadata: Metadata = {
-  title: 'Contact',
-  description: 'We are small, focused, and listening. If you see alignment, reach out—every message is reviewed.',
+  title: 'Contact | Arhin Foundation',
+  description: 'Connect with the Arhin Foundation. We review every message from potential partners and collaborators.',
 }
 
 export default function Contact() {
   return (
     <RootLayout>
-      <PageIntro eyebrow="Contact" title="Contact">
+      <PageIntro eyebrow="Contact" title="Get in Touch">
         <p>
-          We're small, focused, and listening. If you see alignment, reach out—every message is reviewed.
+          We’re small, focused, and listening. If you see alignment with our work, please reach out—every message is reviewed.
         </p>
         <div className="mt-6 text-base text-neutral-600">
-          <p>Potential grantee or collaborator · Philanthropic partnership or event · General inquiry</p>
+          <p>We are particularly interested in hearing from:</p>
+          <ul className="mt-2 list-disc pl-5">
+            <li>Clinics and providers serving youth in the NYC metro area</li>
+            <li>Community organizations focused on youth wellness</li>
+            <li>Potential philanthropic partners</li>
+          </ul>
         </div>
       </PageIntro>
 

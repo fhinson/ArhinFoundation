@@ -1,5 +1,6 @@
 import { type Metadata } from 'next'
 import Image from 'next/image'
+import Link from 'next/link'
 
 import { Border } from '@/components/Border'
 import { ContactSection } from '@/components/ContactSection'
@@ -61,7 +62,7 @@ function FounderStory() {
 
 const affiliations = [
   {
-    organization: 'Partner Engineer, Google / YouTube',
+    organization: 'Google',
     role: '',
     description: '',
     period: ''
@@ -72,12 +73,6 @@ const affiliations = [
     description: '',
     period: ''
   },
-  {
-    organization: 'Columbia University alumnus · Y Combinator alumnus',
-    role: '',
-    description: '',
-    period: ''
-  }
 ]
 
 function Affiliations() {
@@ -114,9 +109,9 @@ function Affiliations() {
 }
 
 export const metadata: Metadata = {
-  title: 'About the Founder',
+  title: 'About the Founder — Francis Kumi Arhin',
   description:
-    'Francis Kumi Arhin is a technologist and philanthropist with a deep commitment to mental health access and community-driven solutions.',
+    'Meet Francis Kumi Arhin, technologist and entrepreneur focused on practical, high leverage philanthropy.',
 }
 
 export default async function About() {
@@ -124,15 +119,16 @@ export default async function About() {
 
   return (
     <RootLayout>
-      <PageIntro eyebrow="About the founder" title="About the founder">
+      <PageIntro eyebrow="About the founder" title="About the Founder — Francis Kumi Arhin">
         <p>
-          Kumi Arhin is a technologist, builder, and investor focused on creating enduring institutions. His work spans product partnerships in the music ecosystem and the founding of Ofori Brothers, a premium wine house known for craft, clarity, and cultural ambition.
+          <strong>Francis Kumi Arhin</strong> is a technologist and builder who focuses on disciplined, practical philanthropy. His work sits at the intersection of product partnerships and community impact.
         </p>
         <div className="mt-10 max-w-2xl space-y-6 text-lg">
           <p>
-            The Arhin Foundation is Kumi's philanthropic vehicle for disciplined, high-leverage giving—beginning with practical mental-health access, the development of talent in the field, and thoughtful stigma reduction. He brings an executive standard that blends engineering rigor with creative vision, and he applies the same standard to how he gives.
+            The Arhin Foundation reflects a simple conviction: support should be accessible, culturally aware, and private by default. We back what works, measure modestly, and scale with care.
           </p>
         </div>
+        <div className="mt-6 text-base"><Link href="/contact" className="underline">Contact</Link></div>
       </PageIntro>
       
       <Container className="mt-16">

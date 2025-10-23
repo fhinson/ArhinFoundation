@@ -3,11 +3,13 @@ import Image from 'next/image'
 import Link from 'next/link'
 
 import { Blockquote } from '@/components/Blockquote'
-import { Border } from '@/components/Border'
 import { Button } from '@/components/Button'
 import { ContactSection } from '@/components/ContactSection'
 import { Container } from '@/components/Container'
 import { FadeIn, FadeInStagger } from '@/components/FadeIn'
+import { SectionIntro } from '@/components/SectionIntro'
+import { GridList, GridListItem } from '@/components/GridList'
+import { Border } from '@/components/Border'
 import { PageIntro } from '@/components/PageIntro'
 import { Testimonial } from '@/components/Testimonial'
 import logoBrightPath from '@/images/clients/bright-path/logo-dark.svg'
@@ -138,38 +140,59 @@ function Clients() {
 }
 
 export const metadata: Metadata = {
-  title: 'Our Work',
+  title: 'Our Work | Year-1 Targets',
   description:
-    'We believe in efficiency and maximizing our resources to provide the best value to our clients.',
+    'Year-1 pilots: therapy funding, clinician micro-grants, and stigma reduction—measured and privacy-first.',
 }
 
-export default async function Work() {
-  let caseStudies = await loadCaseStudies()
-
+export default function Work() {
   return (
     <RootLayout>
-      <PageIntro
-        eyebrow="Our work"
-        title="Proven solutions for real-world problems."
-      >
+      <PageIntro eyebrow="Our Work" title="Our Work">
         <p>
-          We believe in efficiency and maximizing our resources to provide the
-          best value to our clients. The primary way we do that is by re-using
-          the same five projects we’ve been developing for the past decade.
+          We start small, measure what matters, and scale what proves out. Our first year is dedicated to testing three pilot initiatives with clear, conservative targets.
         </p>
+        <div className="mt-6 text-base text-neutral-600">
+          <p><Link href="/about" className="underline">About Francis Kumi Arhin</Link>.</p>
+        </div>
       </PageIntro>
 
-      <CaseStudies caseStudies={caseStudies} />
-
-      <Testimonial
-        className="mt-24 sm:mt-32 lg:mt-40"
-        client={{ name: 'Mail Smirk', logo: logoMailSmirk }}
-      >
-        We approached <em>Studio</em> because we loved their past work. They
-        delivered something remarkably similar in record time.
-      </Testimonial>
-
-      <Clients />
+      <Container className="mt-24 sm:mt-32 lg:mt-40">
+        <SectionIntro
+          eyebrow="Year-1 pilots"
+          title="We start small, measure what matters, and scale what proves out."
+        />
+        <Container className="mt-16">
+          <GridList>
+            <GridListItem title="Therapy Fund (pilot)">
+              <p>Purpose: Underwrite direct therapy sessions for youth via partner clinics and trusted directories, prioritizing culturally responsive care.</p>
+              <p className="mt-2">Year-1 target: Support 250–400 sessions [editable].</p>
+              <p className="mt-2">We’ll track: Attendance, completion, and referral follow-through.</p>
+            </GridListItem>
+            <GridListItem title="Clinician Talent Micro-grants (pilot)">
+              <p>Purpose: Provide supervision stipends and continuing-education support for early-career clinicians serving youth in diverse communities.</p>
+              <p className="mt-2">Year-1 target: Fund 8–12 micro-grants [editable].</p>
+              <p className="mt-2">We’ll track: Clinicians supported and training types completed.</p>
+            </GridListItem>
+            <GridListItem title="Stigma Micro-grants (pilot)">
+              <p>Purpose: Fund small, consent-first creator or community projects that normalize help-seeking among young people.</p>
+              <p className="mt-2">Year-1 target: Award 6–10 micro-grants [editable].</p>
+              <p className="mt-2">We’ll track: Meaningful engagement (saved/rewatched/shared resources), not raw impressions.</p>
+              <p className="mt-2">Rights &amp; consent: All content is consent-first; grantees retain rights while granting the Foundation limited, non-exclusive use.</p>
+            </GridListItem>
+          </GridList>
+        </Container>
+        <Container className="mt-16">
+          <Border className="pt-12">
+            <p className="text-base text-neutral-700">Privacy note: No personal stories are required to show impact. Consent first, always.</p>
+            <p className="mt-2 text-base text-neutral-700">Safeguarding note: All direct programming is delivered with vetted partners and appropriate child-safety protocols.</p>
+          </Border>
+          <div className="mt-8 flex gap-4">
+            <Button href="/contact">Contact us about partnerships</Button>
+            <Link href="/about" className="self-center underline">About Francis Kumi Arhin</Link>
+          </div>
+        </Container>
+      </Container>
 
       <ContactSection />
     </RootLayout>

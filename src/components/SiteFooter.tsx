@@ -28,24 +28,93 @@ export function SiteFooter() {
         <div className="grid grid-cols-1 gap-x-8 gap-y-16 lg:grid-cols-3">
           {/* Navigation */}
           <nav>
-            <ul role="list" className="grid grid-cols-2 gap-8 sm:grid-cols-4">
-              {site.nav.map((item) => (
-                <li key={item.href}>
-                  <Link
-                    href={item.href}
-                    className="text-sm text-fg/70 transition hover:text-primary"
-                  >
-                    {item.label}
-                  </Link>
-                </li>
-              ))}
+            <ul role="list" className="grid grid-cols-1 gap-8 sm:grid-cols-3">
+              <li>
+                <div className="font-display text-base font-semibold tracking-wider text-fg">
+                  Foundation
+                </div>
+                <ul role="list" className="mt-4 space-y-2">
+                  <li>
+                    <Link
+                      href="/mission"
+                      className="text-sm text-fg/70 transition hover:text-primary"
+                    >
+                      Our Mission
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      href="/about"
+                      className="text-sm text-fg/70 transition hover:text-primary"
+                    >
+                      About Us
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      href="/donate"
+                      className="text-sm text-fg/70 transition hover:text-primary"
+                    >
+                      Donate
+                    </Link>
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <div className="font-display text-base font-semibold tracking-wider text-fg">
+                  Connect
+                </div>
+                <ul role="list" className="mt-4 space-y-2">
+                  <li>
+                    <Link
+                      href="/contact"
+                      className="text-sm text-fg/70 transition hover:text-primary"
+                    >
+                      Contact Us
+                    </Link>
+                  </li>
+                  <li>
+                    <a
+                      href="https://instagram.com"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-sm text-fg/70 transition hover:text-primary"
+                    >
+                      Instagram
+                    </a>
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <div className="font-display text-base font-semibold tracking-wider text-fg">
+                  Legal
+                </div>
+                <ul role="list" className="mt-4 space-y-2">
+                  <li>
+                    <Link
+                      href="/privacy"
+                      className="text-sm text-fg/70 transition hover:text-primary"
+                    >
+                      Privacy Policy
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      href="/terms"
+                      className="text-sm text-fg/70 transition hover:text-primary"
+                    >
+                      Terms of Service
+                    </Link>
+                  </li>
+                </ul>
+              </li>
             </ul>
           </nav>
 
           {/* Newsletter */}
           <div>
-            <h3 className="font-display text-sm font-semibold tracking-wider text-fg">
-              Stay Updated
+            <h3 className="font-display text-base font-semibold tracking-wider text-fg">
+              Join our Newsletter
             </h3>
             <p className="mt-4 text-sm text-fg/70">
               Get updates on our work and impact.
@@ -89,9 +158,13 @@ export function SiteFooter() {
           <Link href="/" aria-label="Home">
             <Logo className="h-8" fillOnHover />
           </Link>
-          <p className="text-sm text-fg/70">
-            © {site.name} {new Date().getFullYear()}
-          </p>
+          <div className="text-sm text-fg/70 space-y-1">
+            <p>Privacy: No personal stories required for impact. Consent first, always.</p>
+            <p>Safeguarding: All direct activity happens with vetted partners and appropriate child-safety protocols.</p>
+            <p>Legal: This site provides general information and links. It is not medical advice.</p>
+            <p>Founded by <Link href="/about" className="underline">Francis Kumi Arhin</Link>.</p>
+            <p>© {site.name} {new Date().getFullYear()}</p>
+          </div>
         </div>
       </div>
     </Container>

@@ -11,20 +11,22 @@ const navigation = [
     links: [
       { title: 'Our Mission', href: '/mission' },
       { title: 'About Us', href: '/about' },
-      { title: 'Contact', href: '/contact' },
-    ],
-  },
-  {
-    title: 'Focus Areas',
-    links: [
-      { title: 'Access', href: '/mission#access' },
-      { title: 'Talent', href: '/mission#talent' },
-      { title: 'Stigma', href: '/mission#stigma' },
+      { title: 'Donate', href: '/donate' },
     ],
   },
   {
     title: 'Connect',
-    links: socialMediaProfiles,
+    links: [
+      { title: 'Contact Us', href: '/contact' },
+      { title: 'Instagram', href: 'https://instagram.com' },
+    ],
+  },
+  {
+    title: 'Legal',
+    links: [
+      { title: 'Privacy Policy', href: '/privacy' },
+      { title: 'Terms of Service', href: '/terms' },
+    ],
   },
 ]
 
@@ -34,7 +36,7 @@ function Navigation() {
       <ul role="list" className="grid grid-cols-2 gap-8 sm:grid-cols-3">
         {navigation.map((section, sectionIndex) => (
           <li key={sectionIndex}>
-            <div className="font-display text-base font-semibold tracking-wider text-slate-900">
+            <div className="font-display text-xl font-semibold tracking-wider text-slate-900">
               {section.title}
             </div>
             <ul role="list" className="mt-4 text-base text-slate-700">
@@ -72,8 +74,8 @@ function ArrowIcon(props: React.ComponentPropsWithoutRef<'svg'>) {
 function NewsletterForm() {
   return (
     <form className="max-w-sm">
-      <h2 className="font-display text-base font-semibold tracking-wider text-slate-900">
-        Sign up for updates
+      <h2 className="font-display text-xl font-semibold tracking-wider text-slate-900">
+        Join our Newsletter
       </h2>
       <p className="mt-4 text-base text-slate-700">
         Occasional notes on grants and learnings.
