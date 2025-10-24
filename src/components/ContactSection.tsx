@@ -10,10 +10,10 @@ export function ContactSection() {
         <div className="mx-auto max-w-4xl">
           <div className="max-w-xl">
             <h2 className="font-display text-4xl font-medium text-balance text-white sm:text-5xl">
-              Get in touch
+              Contact
             </h2>
             <p className="mt-6 text-xl text-white/70">
-              We&rsquo;re here to listen. Share your story, your needs, or how we can help. Every message matters to us.
+              For partnerships, press, or general inquiries, please reach out.
             </p>
             <div className="mt-6 flex">
               <Button href="/contact" invert>

@@ -9,7 +9,7 @@ export function StatList({
 }) {
   return (
     <FadeInStagger {...props}>
-      <dl className="grid grid-cols-1 gap-10 sm:grid-cols-2 lg:auto-cols-fr lg:grid-flow-col lg:grid-cols-none">
+      <dl className="grid grid-cols-3 gap-4 max-w-4xl">
         {children}
       </dl>
     </FadeInStagger>
@@ -24,9 +24,9 @@ export function StatListItem({
   value: string
 }) {
   return (
-    <Border as={FadeIn} position="left" className="flex flex-col-reverse pl-8">
+    <Border as={FadeIn} position="left" className="flex flex-col-reverse pl-3">
       <dt className="mt-2 text-base text-neutral-600">{label}</dt>
-      <dd className="font-display text-3xl font-semibold text-neutral-950 sm:text-4xl">
+      <dd className="font-display text-lg font-semibold text-neutral-950 sm:text-xl">
         {value}
       </dd>
     </Border>

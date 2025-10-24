@@ -16,7 +16,7 @@ export function PageIntro({
 }) {
   return (
     <Container
-      className={clsx('mt-24 sm:mt-32 lg:mt-40', centered && 'text-center')}
+      className={clsx('mt-16 sm:mt-20 lg:mt-24', centered && 'text-center')}
     >
       <FadeIn>
         <h1>
@@ -35,7 +35,7 @@ export function PageIntro({
         </h1>
         <div
           className={clsx(
-            'mt-6 max-w-3xl text-xl text-neutral-600',
+            'mt-6 max-w-3xl text-lg sm:text-xl text-neutral-950',
             centered && 'mx-auto',
           )}
         >
