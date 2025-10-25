@@ -18,11 +18,11 @@ const karla = Karla({
 export const metadata: Metadata = {
   title: {
     template: '%s - Arhin Foundation',
-    default: 'Arhin Foundation - A Healthy Mind Is the Foundation of a Healthy Life',
+    default: 'Arhin Foundation - Expanding Youth Mental Health Care in NYC',
   },
   description: 'The Arhin Foundation helps children in underserved NYC communities access mental health care by funding therapy and psychiatric services and strengthening providers who put help within reach.',
   openGraph: {
-    title: 'Arhin Foundation - A Healthy Mind Is the Foundation of a Healthy Life',
+    title: 'Arhin Foundation - Expanding Youth Mental Health Care in NYC',
     description: 'We invest in youth mental health care in New York City, because every child deserves to dream.',
     url: 'https://arhin.org',
     siteName: 'Arhin Foundation',
@@ -39,7 +39,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Arhin Foundation - A Healthy Mind Is the Foundation of a Healthy Life',
+    title: 'Arhin Foundation - Expanding Youth Mental Health Care in NYC',
     description: 'We invest in youth mental health care in New York City, because every child deserves to dream.',
     images: ['https://arhin.org/school.webp'],
   },
