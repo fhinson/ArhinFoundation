@@ -11,14 +11,15 @@ const navigation = [
     links: [
       { title: 'Our Mission', href: '/#mission' },
       { title: 'About Us', href: '/about' },
-      { title: 'Donate', href: '/donate' },
+      { title: 'Our Charter', href: '/charter' },
     ],
   },
   {
     title: 'Connect',
     links: [
+      { title: 'Donate', href: '/donate' },
       { title: 'Contact Us', href: '/contact' },
-      { title: 'Instagram', href: 'https://instagram.com/arhinfoundation' },
+      { title: 'Instagram', href: 'https://www.instagram.com/arhinfoundation' },
     ],
   },
   {
@@ -78,7 +79,7 @@ function NewsletterForm() {
         Join our Newsletter
       </h2>
       <p className="mt-4 text-base text-slate-700">
-        Occasional notes on grants and learnings.
+        Stay informed about our work and impact.
       </p>
       <div className="relative mt-6">
         <input
@@ -113,10 +114,10 @@ export function Footer() {
           </div>
         </div>
         <div className="mt-24 mb-20 flex flex-wrap items-end justify-between gap-x-6 gap-y-4 border-t border-slate-900/10 pt-12">
-          <Link href="/" aria-label="Home">
-            <Logo className="h-8" fillOnHover />
+          <Link href="/" aria-label="Home" className="block">
+            <Logo className="h-8 block" fillOnHover />
           </Link>
-          <p className="text-base text-slate-700">
+          <p className="text-base text-slate-700 m-0 p-0 leading-none">
             © Arhin Foundation {new Date().getFullYear()}
           </p>
         </div>

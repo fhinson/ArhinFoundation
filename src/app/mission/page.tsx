@@ -10,8 +10,13 @@ import { StatList, StatListItem } from '@/components/StatList'
 import { RootLayout } from '@/components/RootLayout'
 
 export const metadata: Metadata = {
-  title: 'Our Mission | Arhin Foundation',
-  description: 'We advance timely, culturally aware youth mental-health support by funding access, talent, and stigma reduction.',
+  title: 'Our Mission',
+  description: 'The Arhin Foundation helps children in underserved NYC communities access mental health care by funding therapy and psychiatric services and strengthening providers who put help within reach.',
+  openGraph: {
+    title: 'Our Mission',
+    description: 'Learn how the Arhin Foundation is expanding mental health care access for children in underserved NYC communities.',
+    type: 'website',
+  },
 }
 
 function WhatWeFund() {
@@ -114,10 +119,10 @@ export default function Mission() {
     <RootLayout>
       <PageIntro eyebrow="Our mission" title="Our Mission">
         <p>
-          We advance timely, culturally aware mental-health support for children. We remove friction to quality care and back the people who deliver it—so more young lives feel steady and free to pursue ambition.
+          The Arhin Foundation helps children in underserved NYC communities access mental health care by funding therapy and psychiatric services and strengthening providers who put help within reach.
         </p>
         <div className="mt-6 text-base text-neutral-600">
-          <p><Link href="/work" className="underline">See our specific targets in Our Work</Link>. <Link href="/about" className="underline">About Francis Kumi Arhin</Link>.</p>
+          <p><Link href="/about" className="underline">Learn about Francis Kumi Arhin</Link>.</p>
         </div>
       </PageIntro>
 

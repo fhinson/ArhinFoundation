@@ -28,7 +28,7 @@ function FocusAreas() {
         <div className="flex flex-col lg:flex-row gap-x-8 gap-y-8">
           <div className="flex-1">
             <h2 className="font-display text-4xl font-medium text-balance text-white sm:text-5xl">
-              The Arhin Foundation is on a mission to help children in underserved NYC communities get real mental health care by funding therapy and psychiatric care, and by backing partners that make care easy to reach.
+              The Arhin Foundation helps children in underserved NYC communities access mental health care by funding therapy and psychiatric services and strengthening providers who put help within reach.
             </h2>
           </div>
 
@@ -81,9 +81,8 @@ function FocusAreas() {
               title: 'Clinicians and Training',
               icon: (
                 <div className="inline-flex items-center justify-center rounded-full bg-white/10 p-2">
-                  <svg className="h-4 w-4 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                    <circle cx="12" cy="12" r="10"/>
-                    <path d="M12 6v12M6 12h12"/>
+                  <svg className="h-4 w-4 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M22 12h-4l-3 9L9 3l-3 9H2"/>
                   </svg>
                 </div>
               ),
@@ -159,11 +158,14 @@ function Approach() {
           <div className="flex justify-center lg:w-3/4 lg:justify-end lg:pr-12">
             <FadeIn className="w-full">
               <Image
-                src="/school2.png"
+                src="/school.webp"
                 width={1024}
                 height={1536}
                 className="h-auto w-full object-cover"
                 alt="School building"
+                loading="lazy"
+                quality={85}
+                sizes="(max-width: 768px) 100vw, (max-width: 1024px) 75vw, 60vw"
               />
             </FadeIn>
           </div>
@@ -216,12 +218,13 @@ export default function Home() {
           </FadeIn>
         <FadeIn className="hidden sm:block justify-self-end w-[12rem] sm:w-[20rem] lg:w-[28rem]">
           <Image
-            src="/hero-child.png"
+            src="/hero-child.webp"
             alt="Teen and caregiver reading a short mental health guide at a community table."
-            width={1200}
-            height={1600}
+            width={846}
+            height={930}
             priority
-            sizes="(min-width: 1024px) 28rem, 22rem"
+            quality={90}
+            sizes="(min-width: 1024px) 28rem, (min-width: 640px) 20rem, 12rem"
             className="h-auto w-full object-cover"
             style={{ 
               objectPosition: '50% 50%',

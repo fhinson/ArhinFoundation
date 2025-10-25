@@ -127,8 +127,13 @@ function ContactDetails() {
 }
 
 export const metadata: Metadata = {
-  title: 'Contact | Arhin Foundation',
-  description: 'Connect with the Arhin Foundation. We review every message from potential partners and collaborators.',
+  title: 'Contact Us',
+  description: 'Connect with the Arhin Foundation. We review every message from potential partners, collaborators, and community organizations interested in youth mental health.',
+  openGraph: {
+    title: 'Contact Us',
+    description: 'Reach out to explore partnerships and collaboration opportunities in youth mental health.',
+    type: 'website',
+  },
 }
 
 export default function Contact() {

@@ -16,7 +16,6 @@ const nextConfig = {
   pageExtensions: ['js', 'jsx', 'ts', 'tsx', 'mdx'],
   async redirects() {
     return [
-      { source: '/mission', destination: '/', permanent: true },
       { source: '/work', destination: '/', permanent: true },
     ]
   },

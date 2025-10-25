@@ -20,6 +20,29 @@ export const metadata: Metadata = {
     template: '%s - Arhin Foundation',
     default: 'Arhin Foundation - A Healthy Mind Is the Foundation of a Healthy Life',
   },
+  description: 'The Arhin Foundation helps children in underserved NYC communities access mental health care by funding therapy and psychiatric services and strengthening providers who put help within reach.',
+  openGraph: {
+    title: 'Arhin Foundation - A Healthy Mind Is the Foundation of a Healthy Life',
+    description: 'We invest in youth mental health care in New York City, because every child deserves to dream.',
+    url: 'https://arhin.org',
+    siteName: 'Arhin Foundation',
+    images: [
+      {
+        url: 'https://arhin.org/school.webp',
+        width: 1024,
+        height: 1536,
+        alt: 'Teacher and student at school',
+      },
+    ],
+    locale: 'en_US',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Arhin Foundation - A Healthy Mind Is the Foundation of a Healthy Life',
+    description: 'We invest in youth mental health care in New York City, because every child deserves to dream.',
+    images: ['https://arhin.org/school.webp'],
+  },
 }
 
 export default function Layout({ children }: { children: React.ReactNode }) {
@@ -34,10 +57,10 @@ export default function Layout({ children }: { children: React.ReactNode }) {
               '@type': 'Organization',
               name: 'Arhin Foundation',
               url: 'https://arhin.org',
-              logo: 'https://arhin.org/logo.png',
+              logo: 'https://arhin.org/school.webp',
               slogan: 'A Healthy Mind Is the Foundation of a Healthy Life.',
               missionStatement:
-                'We support youth mental health access by removing friction to care and backing the people who deliver it.',
+                'The Arhin Foundation helps children in underserved NYC communities access mental health care by funding therapy and psychiatric services and strengthening providers who put help within reach.',
               areaServed: 'New York City metropolitan area',
               foundingDate: '2025',
               founder: {
@@ -45,9 +68,15 @@ export default function Layout({ children }: { children: React.ReactNode }) {
                 name: 'Francis Kumi Arhin',
                 alternateName: 'Kumi Arhin',
                 url: 'https://arhin.org/about',
-                jobTitle: 'Founder',
+                jobTitle: 'Founder and President',
+                description: 'Founder and President of the Arhin Foundation, dedicated to expanding youth mental health access in underserved NYC communities.',
+                sameAs: [
+                  'https://www.linkedin.com/in/francisarhin',
+                ],
               },
-              sameAs: ['https://oforibrothers.com'],
+              sameAs: [
+                'https://www.instagram.com/arhinfoundation',
+              ],
             }),
           }}
         />

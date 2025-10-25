@@ -7,7 +7,12 @@ import { PageIntro } from '@/components/PageIntro'
 export const metadata: Metadata = {
   title: 'Donate',
   description:
-    'Support youth mental health in New York City. Your donation helps remove barriers to care for children in underserved communities.',
+    'Support youth mental health in New York City. Your donation helps remove barriers to care for children in underserved communities. Every gift makes a difference.',
+  openGraph: {
+    title: 'Donate',
+    description: 'Your donation helps children in underserved NYC communities access the mental health care they need.',
+    type: 'website',
+  },
 }
 
 export default function Donate() {
@@ -49,8 +54,8 @@ export default function Donate() {
                   </h3>
                   <p className="text-base text-slate-700 mb-4">
                     For larger gifts, we accept checks and wire transfers. Please contact us at{' '}
-                    <a href="mailto:giving@arhinfoundation.org" className="text-primary hover:underline">
-                      giving@arhinfoundation.org
+                    <a href="mailto:giving@arhin.org" className="text-primary hover:underline">
+                      giving@arhin.org
                     </a>
                     {' '}for wire instructions.
                   </p>
@@ -79,8 +84,7 @@ export default function Donate() {
 
               <div className="mt-10 pt-8 border-t border-slate-200">
                 <p className="text-sm text-slate-600">
-                  The Arhin Foundation is a 501(c)(3) nonprofit organization. 
-                  All donations are tax-deductible to the fullest extent allowed by law.
+                  All donations directly support youth mental health programs in New York City.
                 </p>
               </div>
             </div>

@@ -37,8 +37,8 @@ export const site = {
   },
   seo: {
     title: "Arhin Foundation",
-    description: "Philanthropy with discipline—mental health first. We back practical access to care, develop talent in the field, and reduce stigma so help feels normal and close to home.",
-    ogImage: "/og.png",
+    description: "The Arhin Foundation helps children in underserved NYC communities access mental health care by funding therapy and psychiatric services and strengthening providers who put help within reach.",
+    ogImage: "/school.webp",
   },
 } as const
 

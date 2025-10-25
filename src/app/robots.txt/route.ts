@@ -4,7 +4,7 @@ export async function GET() {
   const robotsTxt = `User-agent: *
 Allow: /
 
-Sitemap: ${process.env.NEXT_PUBLIC_BASE_URL || 'https://arhinfoundation.org'}/sitemap.xml`
+Sitemap: ${process.env.NEXT_PUBLIC_BASE_URL || 'https://arhin.org'}/sitemap.xml`
 
   return new NextResponse(robotsTxt, {
     headers: {

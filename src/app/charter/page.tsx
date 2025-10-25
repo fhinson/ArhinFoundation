@@ -8,7 +8,11 @@ import { Footer } from '@/components/Footer'
 
 export const metadata: Metadata = {
   title: 'The Cerulean Charter',
-  description: 'Our guiding vision and pledge to uphold our values at the Arhin Foundation.',
+  description: 'The Cerulean Charter outlines the Arhin Foundation\'s core pillars: See the Unseen, Combat Stigma, and Measure and Move. Learn about our commitment to youth mental health.',
+  openGraph: {
+    title: 'The Cerulean Charter',
+    description: 'Our guiding vision and pledge to uphold our core values in youth mental health philanthropy.',
+  },
 }
 
 export default function Charter() {
@@ -17,7 +21,7 @@ export default function Charter() {
       <SiteHeader />
       <PageIntro eyebrow="" title="The Cerulean Charter">
         <p>
-          The color cerulean reflects a tranquil and skyward hope. The Cerulean Charter is our guiding vision and pledge to uphold these values.
+          The color cerulean evokes skyward hope. The Cerulean Charter is our guiding vision and pledge to uphold these pillars.
         </p>
       </PageIntro>
 

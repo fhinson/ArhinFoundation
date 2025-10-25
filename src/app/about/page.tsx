@@ -1,7 +1,6 @@
 import { type Metadata } from 'next'
 import Link from 'next/link'
 
-import { ContactSection } from '@/components/ContactSection'
 import { Container } from '@/components/Container'
 import { FadeIn, FadeInStagger } from '@/components/FadeIn'
 import { PageIntro } from '@/components/PageIntro'
@@ -12,7 +11,7 @@ import { RootLayout } from '@/components/RootLayout'
 
 function LeadershipSection() {
   return (
-    <div className="relative mt-12 bg-fg py-20 sm:mt-16 lg:mt-20 lg:py-28">
+    <div className="relative mt-12 bg-fg py-16 sm:mt-16 sm:py-20 lg:mt-20 lg:py-28">
       {/* Decorative monogram in top right */}
       <div className="absolute top-4 right-4 sm:top-8 sm:right-8 opacity-10">
         <Logomark className="h-12 w-auto sm:h-24 sm:w-auto" invert />
@@ -46,10 +45,10 @@ function LeadershipSection() {
             </FadeIn>
             <div className="mt-6 space-y-6 text-lg text-white">
               <p>
-                Francis Kumi Arhin is deeply committed to expanding youth mental health access, advancing education, reducing stigma, and empowering youth to get support and care. He believes in applying the best of current psychology and neuroscience to practical, community-centered solutions. His lifetime aspiration is to create meaningful, scalable philanthropic impact in mental health care.
+                Francis Kumi Arhin is Founder and President of the Arhin Foundation. His commitment to youth mental health is shaped by a deep understanding of its interconnected nature and the quiet, often invisible struggles children face. These struggles ripple across families, communities, and generations. Breaking this cycle is his philanthropic dream.
               </p>
               <p>
-                He brings more than a decade in technology across YouTube, Google, and Twitter. He is the Founder and CEO of Ofori Brothers Wine, redefining premium wine through the flavors of Africa, and previously founded and scaled a venture-backed education technology startup to over one million users worldwide. A Columbia University graduate in Computer Science, he combines product rigor with operational discipline. That mix of execution and insight guides the foundation&apos;s work and its commitment to measurable impact.
+                His approach is informed by a career shaping consumer technologies at global scale across Google, YouTube, and Twitter. He previously founded an ed-tech platform that grew to over one million users and is also Founder and CEO of Ofori Brothers Wine. He studied Computer Science at Columbia University.
               </p>
             </div>
           </div>
@@ -62,17 +61,17 @@ function LeadershipSection() {
           {/* Advisor 1 */}
           <FadeIn>
             <div className="flex flex-col">
-              <div className="aspect-square w-full max-w-80 bg-white/10">
+              <div className="aspect-square w-full lg:max-w-80 bg-white/10">
               </div>
               <div className="mt-6">
                 <h4 className="font-display text-2xl font-medium text-white">
-                  Dr. Sarah Chen
+                  Lorem Ipsum
                 </h4>
                 <p className="mt-2 font-display text-sm font-black uppercase tracking-widest text-white/80">
                   Advisor
                 </p>
                 <p className="mt-4 text-base text-white">
-                  Dr. Chen is a clinical psychologist with over 15 years of experience in youth mental health. She previously directed community mental health programs at NYU Langone and has published extensively on culturally responsive therapy approaches. She brings deep expertise in evidence-based interventions and community partnership models.
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
                 </p>
               </div>
             </div>
@@ -81,17 +80,17 @@ function LeadershipSection() {
           {/* Advisor 2 */}
           <FadeIn>
             <div className="flex flex-col">
-              <div className="aspect-square w-full max-w-80 bg-white/10">
+              <div className="aspect-square w-full lg:max-w-80 bg-white/10">
               </div>
               <div className="mt-6">
                 <h4 className="font-display text-2xl font-medium text-white">
-                  Michael Rodriguez
+                  Lorem Ipsum
                 </h4>
                 <p className="mt-2 font-display text-sm font-black uppercase tracking-widest text-white/80">
                   Advisor
                 </p>
                 <p className="mt-4 text-base text-white">
-                  Michael is a public health advocate and former NYC Department of Health leader specializing in adolescent behavioral health. He has led initiatives to expand mental health access in underserved communities and brings strategic insight on systems change and policy advocacy. He currently serves on multiple nonprofit boards focused on youth wellbeing.
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
                 </p>
               </div>
             </div>
@@ -106,12 +105,51 @@ function LeadershipSection() {
 export const metadata: Metadata = {
   title: 'About Us',
   description:
-    'The Arhin Foundation supports youth mental health care access in New York City through evidence-based interventions and community partnerships.',
+    'Learn about the Arhin Foundation and our leadership. Founded by Francis Kumi Arhin, we are dedicated to expanding youth mental health access in underserved NYC communities through philanthropy and evidence-based interventions.',
+  openGraph: {
+    title: 'About Us',
+    description: 'Learn about the Arhin Foundation, our leadership, and our mission to expand youth mental health care access in NYC.',
+    type: 'website',
+  },
 }
 
 export default function About() {
   return (
     <RootLayout>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'Person',
+            name: 'Francis Kumi Arhin',
+            alternateName: 'Kumi Arhin',
+            jobTitle: 'Founder and President',
+            worksFor: {
+              '@type': 'Organization',
+              name: 'Arhin Foundation',
+              url: 'https://arhin.org',
+            },
+            description: 'Francis Kumi Arhin is Founder and President of the Arhin Foundation. His commitment to youth mental health is shaped by a deep understanding of its interconnected nature and the quiet, often invisible struggles children face. He brings experience from Google, YouTube, and Twitter, and is also Founder and CEO of Ofori Brothers Wine.',
+            alumniOf: {
+              '@type': 'EducationalOrganization',
+              name: 'Columbia University',
+            },
+            knowsAbout: [
+              'Youth Mental Health',
+              'Philanthropy',
+              'Mental Health Advocacy',
+              'Community Mental Health',
+              'Child Psychology',
+              'Technology',
+              'Product Development',
+            ],
+            sameAs: [
+              'https://www.linkedin.com/in/francisarhin',
+            ],
+          }),
+        }}
+      />
       <PageIntro eyebrow="" title="About Us">
         <p>
           At the Arhin Foundation, we&apos;re bringing light to an often invisible battle: putting mental health care within reach of overlooked youth.
@@ -124,7 +162,7 @@ export default function About() {
             The Cerulean Charter
           </h2>
           <p className="mt-4 text-lg sm:text-xl text-slate-900">
-            The color cerulean reflects a tranquil and skyward hope. The Cerulean Charter is our guiding vision and pledge to uphold these values.
+            The color cerulean evokes skyward hope. The Cerulean Charter is our guiding vision and pledge to uphold these pillars.
           </p>
         </FadeIn>
       </Container>
@@ -151,8 +189,6 @@ export default function About() {
       </Container>
 
       <LeadershipSection />
-
-      <ContactSection />
     </RootLayout>
   )
 }
