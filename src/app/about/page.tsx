@@ -1,5 +1,6 @@
 import { type Metadata } from 'next'
 import Link from 'next/link'
+import Image from 'next/image'
 
 import { Container } from '@/components/Container'
 import { FadeIn, FadeInStagger } from '@/components/FadeIn'
@@ -8,6 +9,7 @@ import { SectionIntro } from '@/components/SectionIntro'
 import { StatList, StatListItem } from '@/components/StatList'
 import { Logomark } from '@/components/Logo'
 import { RootLayout } from '@/components/RootLayout'
+import rachelKlebanov from '@/images/team/rachel-klebanov.jpg'
 
 function LeadershipSection() {
   return (
@@ -61,18 +63,33 @@ function LeadershipSection() {
           {/* Advisor 1 */}
           <FadeIn>
             <div className="flex flex-col">
-              <div className="aspect-square w-full lg:max-w-80 bg-white/10">
+              <div className="aspect-square w-full lg:max-w-80 overflow-hidden bg-white/10">
+                <Image
+                  src={rachelKlebanov}
+                  alt="Rachel H. Klebanov"
+                  className="h-full w-full object-cover"
+                  width={320}
+                  height={320}
+                />
               </div>
               <div className="mt-6">
                 <h4 className="font-display text-2xl font-medium text-white">
-                  Lorem Ipsum
+                  Rachel H. Klebanov
                 </h4>
                 <p className="mt-2 font-display text-sm font-black uppercase tracking-widest text-white/80">
                   Advisor
                 </p>
-                <p className="mt-4 text-base text-white">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                </p>
+                <div className="mt-4 space-y-4 text-base text-white">
+                  <p>
+                    Rachel H. Klebanov, LPC, LCPC is a therapist and entrepreneur, passionate about utilizing creativity and intuition as tools for transformation and change. She envisions a world in which all children can be playful, passionate, and foster their own uniqueness.
+                  </p>
+                  <p>
+                    Nurturing children&apos;s mental health can start with parents and families. After 5+ years of clinical experience, Rachel currently specializes in perinatal mental health, helping young parents and parents-to-be thrive during their own transitional moments.
+                  </p>
+                  <p>
+                    She is the owner of Intuitive Body Counseling and Healing, a small DC-based therapy practice, and is a clinician with Seven Starling, an online maternal mental health clinic. She has an MA in Clinical Mental Health Counseling from The George Washington University, and a BA in Psychology and Neuroscience from Princeton University.
+                  </p>
+                </div>
               </div>
             </div>
           </FadeIn>
