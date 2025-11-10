@@ -50,7 +50,7 @@ function LeadershipSection() {
                 Francis Kumi Arhin is Founder and President of the Arhin Foundation. His commitment to youth mental health is shaped by a deep understanding of its interconnected nature and the quiet, often invisible struggles children face. These struggles ripple across families, communities, and generations. Breaking this cycle is his philanthropic dream.
               </p>
               <p>
-                His approach is informed by a career shaping consumer technologies at global scale across Google, YouTube, and Twitter. He previously founded an ed-tech platform that grew to over one million users and is also Founder and CEO of Ofori Brothers Wine. He studied Computer Science at Columbia University.
+              His approach is informed by a career shaping consumer technologies at global scale across Google, YouTube, and Twitter. He previously founded an education technology platform that grew to over one million users globally. Today, he is Founder and CEO at Ofori Brothers Wine. He studied Computer Science at Columbia University.
               </p>
             </div>
           </div>
