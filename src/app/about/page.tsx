@@ -85,7 +85,7 @@ function LeadershipSection() {
                     Rachel H. Klebanov, LPC, LCPC is a therapist and entrepreneur, passionate about utilizing creativity and intuition as tools for transformation and change. She envisions a world in which all children can be playful, passionate, and foster their own uniqueness.
                   </p>
                   <p>
-                    Nurturing children&apos;s mental health can start with parents and families. After 5+ years of clinical experience, Rachel currently specializes in perinatal mental health, helping young parents and parents-to-be thrive during their own transitional moments.
+                    Nurturing children&apos;s mental health can start with parents and families. After 7+ years of clinical experience, Rachel currently specializes in perinatal mental health, helping young parents and parents-to-be thrive during their own transitional moments.
                   </p>
                   <p>
                     She is the owner of Intuitive Body Counseling and Healing, a small DC-based therapy practice, and is a clinician with Seven Starling, an online maternal mental health clinic. She has an MA in Clinical Mental Health Counseling from The George Washington University, and a BA in Psychology and Neuroscience from Princeton University.
