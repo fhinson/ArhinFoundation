@@ -10,6 +10,7 @@ import { StatList, StatListItem } from '@/components/StatList'
 import { Logomark } from '@/components/Logo'
 import { RootLayout } from '@/components/RootLayout'
 import rachelKlebanov from '@/images/team/rachel-klebanov.jpg'
+import anitaBatuure from '@/images/team/anita-batuure.jpg'
 
 function LeadershipSection() {
   return (
@@ -97,18 +98,30 @@ function LeadershipSection() {
           {/* Advisor 2 */}
           <FadeIn>
             <div className="flex flex-col">
-              <div className="aspect-square w-full lg:max-w-80 bg-white/10">
+              <div className="aspect-square w-full lg:max-w-80 overflow-hidden bg-white/10">
+                <Image
+                  src={anitaBatuure}
+                  alt="Dr. Anita Batuure"
+                  className="h-full w-full object-cover object-left-top"
+                  width={320}
+                  height={320}
+                />
               </div>
               <div className="mt-6">
                 <h4 className="font-display text-2xl font-medium text-white">
-                  Lorem Ipsum
+                  Dr. Anita Batuure
                 </h4>
                 <p className="mt-2 font-display text-sm font-black uppercase tracking-widest text-white/80">
                   Advisor
                 </p>
-                <p className="mt-4 text-base text-white">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                </p>
+                <div className="mt-4 space-y-4 text-base text-white">
+                  <p>
+                    Dr. Batuure received her Bachelor of Science in Applied Psychology from New York University and earned her Psy.D. from the Rutgers University Graduate School of Applied and Professional Psychology (GSAPP). She completed her pre-doctoral internship at the James J. Peters VA Medical Center in the Bronx and has worked in a variety of settings, including the Rutgers Counseling Center (CAPS), the Center for the Intense Treatment of Personality Disorders (CITPD), and the Brooklyn VA. Dr. Batuure&apos;s research has largely focused on personality and how individual personality traits and attributes impact our relationship with modern social constructs.
+                  </p>
+                  <p>
+                    Dr. Batuure is currently a first year postdoctoral fellow with Therapists of New York where she is specializing with clients in areas of trauma and personality disorders as well as with LGBTQIA+ identified clients. She is passionate about expanding access to mental health care, especially to marginalized communities whom have historically been underrepresented and underserved in the mental health community.
+                  </p>
+                </div>
               </div>
             </div>
           </FadeIn>
