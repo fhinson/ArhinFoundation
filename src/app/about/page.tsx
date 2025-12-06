@@ -33,7 +33,15 @@ function LeadershipSection() {
         <div className="lg:flex lg:items-start lg:justify-end">
           <div className="flex justify-center lg:w-1/2 lg:justify-end lg:pr-12">
             <FadeIn className="w-full">
-              <div className="relative flex aspect-719/680 w-full bg-white/10">
+              <div className="relative flex aspect-719/680 w-full overflow-hidden bg-white/10">
+                <Image
+                  src="/francis-kumi-arhin.jpg"
+                  alt="Francis Kumi Arhin, Founder and President of the Arhin Foundation"
+                  className="h-full w-full object-cover grayscale"
+                  width={719}
+                  height={680}
+                  priority
+                />
               </div>
             </FadeIn>
           </div>
@@ -51,24 +59,24 @@ function LeadershipSection() {
                 Francis Kumi Arhin is Founder and President of the Arhin Foundation. His commitment to youth mental health is shaped by a deep understanding of its interconnected nature and the quiet, often invisible struggles children face. These struggles ripple across families, communities, and generations. Breaking this cycle is his philanthropic dream.
               </p>
               <p>
-              His approach is informed by a career shaping consumer technologies at global scale across Google, YouTube, and Twitter. He previously founded an education technology platform that grew to over one million users globally. Today, he is Founder and CEO at Ofori Brothers Wine. He studied Computer Science at Columbia University.
+              His approach is informed by a career shaping consumer technologies at global scale across Google, YouTube, and Twitter. He previously founded an education technology platform that grew to over one million users globally. Today, he is Founder and CEO at Ofori Brothers Wine. He studied Computer Science at Columbia University, where his thesis earned the Theodore R. Bashkow Award.
               </p>
             </div>
           </div>
         </div>
       </Container>
 
-      {/* Advisors */}
+      {/* Directors */}
       <Container className="mt-16">
         <FadeInStagger className="grid grid-cols-1 gap-12 lg:grid-cols-2">
-          {/* Advisor 1 */}
+          {/* Director 1 */}
           <FadeIn>
             <div className="flex flex-col">
               <div className="aspect-square w-full lg:max-w-80 overflow-hidden bg-white/10">
                 <Image
                   src={rachelKlebanov}
                   alt="Rachel H. Klebanov"
-                  className="h-full w-full object-cover"
+                  className="h-full w-full object-cover grayscale"
                   width={320}
                   height={320}
                 />
@@ -78,7 +86,7 @@ function LeadershipSection() {
                   Rachel H. Klebanov
                 </h4>
                 <p className="mt-2 font-display text-sm font-black uppercase tracking-widest text-white/80">
-                  Advisor
+                  Director
                 </p>
                 <div className="mt-4 space-y-4 text-base text-white">
                   <p>
@@ -95,14 +103,14 @@ function LeadershipSection() {
             </div>
           </FadeIn>
 
-          {/* Advisor 2 */}
+          {/* Director 2 */}
           <FadeIn>
             <div className="flex flex-col">
               <div className="aspect-square w-full lg:max-w-80 overflow-hidden bg-white/10">
                 <Image
                   src={anitaBatuure}
                   alt="Dr. Anita Batuure"
-                  className="h-full w-full object-cover object-left-top"
+                  className="h-full w-full object-cover object-left-top grayscale"
                   width={320}
                   height={320}
                 />
@@ -112,7 +120,7 @@ function LeadershipSection() {
                   Dr. Anita Batuure
                 </h4>
                 <p className="mt-2 font-display text-sm font-black uppercase tracking-widest text-white/80">
-                  Advisor
+                  Director
                 </p>
                 <div className="mt-4 space-y-4 text-base text-white">
                   <p>
@@ -137,9 +145,24 @@ export const metadata: Metadata = {
   description:
     'Learn about the Arhin Foundation and our leadership. Founded by Francis Kumi Arhin, we are dedicated to expanding youth mental health access in underserved NYC communities through philanthropy and evidence-based interventions.',
   openGraph: {
-    title: 'About Us',
-    description: 'Learn about the Arhin Foundation, our leadership, and our mission to expand youth mental health care access in NYC.',
+    title: 'About Us - Arhin Foundation',
+    description: 'Learn about the Arhin Foundation, our leadership, and our mission to expand youth mental health care access in NYC. Founded by Francis Kumi Arhin.',
     type: 'website',
+    url: 'https://arhin.org/about',
+    images: [
+      {
+        url: 'https://arhin.org/francis-kumi-arhin-grayscale.jpg',
+        width: 1200,
+        height: 1200,
+        alt: 'Francis Kumi Arhin, Founder and President of the Arhin Foundation',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'About Us - Arhin Foundation',
+    description: 'Learn about the Arhin Foundation, our leadership, and our mission to expand youth mental health care access in NYC. Founded by Francis Kumi Arhin.',
+    images: ['https://arhin.org/francis-kumi-arhin-grayscale.jpg'],
   },
 }
 
@@ -177,6 +200,7 @@ export default function About() {
             sameAs: [
               'https://www.linkedin.com/in/francisarhin',
             ],
+            image: 'https://arhin.org/francis-kumi-arhin-grayscale.jpg',
           }),
         }}
       />
