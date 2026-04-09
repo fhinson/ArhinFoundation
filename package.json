@@ -7,7 +7,9 @@
     "img:cutout": "node scripts/remove-bg.mjs public/hero-child.jpg public/hero-child-cutout.png",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "test": "vitest run",
+    "test:watch": "vitest"
   },
   "browserslist": "defaults, not ie <= 11",
   "dependencies": {

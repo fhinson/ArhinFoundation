@@ -53,7 +53,7 @@ export default function Contact() {
     <RootLayout>
       <PageIntro eyebrow="Contact" title="Get in Touch">
         <p>
-          We're small, focused, and listening. If you see alignment with our work, please reach out—every message is reviewed.
+          We&apos;re small, focused, and listening. If you see alignment with our work, please reach out—every message is reviewed.
         </p>
         <div className="mt-6 text-base text-neutral-600">
           <p>We are particularly interested in hearing from:</p>

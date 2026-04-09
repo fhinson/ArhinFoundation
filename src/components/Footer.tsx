@@ -4,6 +4,7 @@ import { Container } from '@/components/Container'
 import { FadeIn } from '@/components/FadeIn'
 import { Logo } from '@/components/Logo'
 import { socialMediaProfiles } from '@/components/SocialMedia'
+import { NewsletterForm } from '@/components/NewsletterForm'
 
 const navigation = [
   {
@@ -59,49 +60,6 @@ function Navigation() {
   )
 }
 
-function ArrowIcon(props: React.ComponentPropsWithoutRef<'svg'>) {
-  return (
-    <svg viewBox="0 0 16 6" aria-hidden="true" {...props}>
-      <path
-        fill="currentColor"
-        fillRule="evenodd"
-        clipRule="evenodd"
-        d="M16 3 10 .5v2H0v1h10v2L16 3Z"
-      />
-    </svg>
-  )
-}
-
-function NewsletterForm() {
-  return (
-    <form className="max-w-sm">
-      <h2 className="font-display text-xl font-semibold tracking-wider text-slate-900">
-        Join our Newsletter
-      </h2>
-      <p className="mt-4 text-base text-slate-700">
-        Stay informed about our work and impact.
-      </p>
-      <div className="relative mt-6">
-        <input
-          type="email"
-          placeholder="Email address"
-          autoComplete="email"
-          aria-label="Email address"
-          className="block w-full border border-slate-300 bg-transparent py-4 pr-20 pl-6 text-base/6 text-slate-900 ring-4 ring-transparent transition placeholder:text-slate-500 focus:border-slate-900 focus:ring-slate-900/5 focus:outline-hidden"
-        />
-        <div className="absolute inset-y-1 right-1 flex justify-end">
-          <button
-            type="submit"
-            aria-label="Submit"
-            className="flex aspect-square h-full items-center justify-center bg-slate-900 text-slate-100 transition hover:bg-slate-900/80"
-          >
-            <ArrowIcon className="w-4" />
-          </button>
-        </div>
-      </div>
-    </form>
-  )
-}
 
 export function Footer() {
   return (
