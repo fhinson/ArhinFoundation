@@ -99,6 +99,7 @@ export function ContactForm() {
   const [formData, setFormData] = useState<Partial<ContactFormData>>({})
   const [errors, setErrors] = useState<Record<string, string>>({})
   const [isSubmitting, setIsSubmitting] = useState(false)
+  const [isSuccess, setIsSuccess] = useState(false)
   const [captcha] = useState(() => generateCaptcha())
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -123,8 +124,7 @@ export function ContactForm() {
       })
 
       if (response.ok) {
-        // Show success toast (placeholder for now)
-        alert('Thank you for your message! We\'ll get back to you soon.')
+        setIsSuccess(true)
         setFormData({})
       } else {
         const errorData = await response.json()
@@ -154,15 +154,33 @@ export function ContactForm() {
     }
   }
 
+  if (isSuccess) {
+    return (
+      <div className="lg:order-last">
+        <div className="border border-border bg-muted p-8">
+          <h2 className="font-display text-2xl font-medium text-fg">
+            Message sent.
+          </h2>
+          <p className="mt-4 text-base text-fg/70">
+            Thank you for reaching out. We&rsquo;ll review your message and follow up within 2–3 business days if there&rsquo;s alignment.
+          </p>
+          <p className="mt-2 text-base text-fg/70">
+            A confirmation has been sent to your email.
+          </p>
+        </div>
+      </div>
+    )
+  }
+
   return (
     <div className="lg:order-last">
       <form onSubmit={handleSubmit}>
         <h2 className="font-display text-base font-semibold text-fg">
           Contact Form
         </h2>
-        
+
         {errors.general && (
-          <div className="mt-4 rounded-md bg-danger/10 p-4 text-sm text-danger">
+          <div className="mt-4 bg-danger/10 p-4 text-sm text-danger">
             {errors.general}
           </div>
         )}

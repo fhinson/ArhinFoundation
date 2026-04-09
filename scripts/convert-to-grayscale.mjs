@@ -6,8 +6,8 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 const projectRoot = join(__dirname, '..');
 
-const inputPath = join(projectRoot, 'public', 'francis-kumi-arhin.jpg');
-const outputPath = join(projectRoot, 'public', 'francis-kumi-arhin-grayscale.jpg');
+const inputPath = join(projectRoot, 'public', 'francis-arhin.jpg');
+const outputPath = join(projectRoot, 'public', 'francis-arhin-grayscale.jpg');
 
 try {
   await sharp(inputPath)

@@ -101,4 +101,6 @@ html {
   --color-primary: #722f37;
   --color-on-primary: #fefdf8;
   --color-accent: #B08D57;
+  --color-ring: rgba(176,141,87,0.45);
+  --color-danger: #7A2E34;
 }

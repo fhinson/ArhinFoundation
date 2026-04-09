@@ -122,7 +122,7 @@ export default function Mission() {
           The Arhin Foundation helps children in underserved NYC communities access mental health care by funding therapy and psychiatric services and strengthening providers who put help within reach.
         </p>
         <div className="mt-6 text-base text-neutral-600">
-          <p><Link href="/about" className="underline">Learn about Francis Kumi Arhin</Link>.</p>
+          <p><Link href="/about" className="underline">Learn about Francis Arhin</Link>.</p>
         </div>
       </PageIntro>
 

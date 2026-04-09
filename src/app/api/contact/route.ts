@@ -1,42 +1,39 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { contactFormSchema } from '@/lib/validations'
+import { sendContactNotification, sendContactConfirmation } from '@/lib/email'
 
 export async function POST(request: NextRequest) {
   try {
     const body = await request.json()
-    
+
     // Validate the form data
     const validatedData = contactFormSchema.parse(body)
-    
+
     // Check honeypot (should be empty)
     if (validatedData.honeypot) {
-      console.log('Bot detected via honeypot')
-      return NextResponse.json({ error: 'Bot detected' }, { status: 400 })
+      // Return success to avoid tipping off bots
+      return NextResponse.json({ success: true })
     }
-    
-    // Log the contact form submission (in production, you'd save to database)
-    console.log('Contact form submission:', {
+
+    const submission = {
       name: validatedData.name,
       email: validatedData.email,
       organization: validatedData.organization,
       reason: validatedData.reason,
       message: validatedData.message,
-      timestamp: new Date().toISOString(),
+    }
+
+    // Send notification email to you, then confirmation to the sender
+    await sendContactNotification(submission)
+    await sendContactConfirmation(submission)
+
+    return NextResponse.json({
+      success: true,
+      message: "Thank you for your message. We'll get back to you soon.",
     })
-    
-    // In a real application, you would:
-    // 1. Save to database
-    // 2. Send email notification
-    // 3. Send auto-reply to user
-    
-    return NextResponse.json({ 
-      success: true, 
-      message: 'Thank you for your message. We\'ll get back to you soon.' 
-    })
-    
   } catch (error) {
     console.error('Contact form error:', error)
-    
+
     if (error instanceof Error && 'issues' in error) {
       // Zod validation errors
       const fieldErrors: Record<string, string> = {}
@@ -46,10 +43,10 @@ export async function POST(request: NextRequest) {
       })
       return NextResponse.json({ errors: fieldErrors }, { status: 400 })
     }
-    
+
     return NextResponse.json(
-      { error: 'Internal server error' }, 
-      { status: 500 }
+      { error: 'Something went wrong. Please try again.' },
+      { status: 500 },
     )
   }
 }

@@ -20,7 +20,7 @@ export function FounderSpotlight() {
               </span>
             </div>
             <p className="mt-6 text-lg text-bg/80">
-              <strong>Kumi Arhin</strong> is a technologist and entrepreneur building enduring institutions. The Arhin Foundation is his commitment to disciplined, high-leverage giving.
+              <strong>Francis Arhin</strong> is a technologist and entrepreneur building enduring institutions. The Arhin Foundation is his commitment to disciplined, high-leverage giving.
             </p>
             <div className="mt-8">
               <Button href="/about" invert>
@@ -33,7 +33,7 @@ export function FounderSpotlight() {
             <div className="aspect-[4/5] overflow-hidden rounded-3xl bg-neutral-100">
               <Image
                 src={imageFounder}
-                alt="Kumi Arhin, Founder"
+                alt="Francis Arhin, Founder"
                 className="h-full w-full object-cover grayscale transition duration-500 motion-safe:hover:scale-105"
                 priority
               />

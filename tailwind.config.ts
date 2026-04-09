@@ -25,6 +25,8 @@ const config: Config = {
         "merlot-light": "#8b4a52",
         ivory: "#fefdf8",
         "ivory-dark": "#f5f1e8",
+        ring: "rgba(176,141,87,0.45)",
+        danger: "#7A2E34",
       },
       fontFamily: {
         sans: ['var(--font-sans)'],

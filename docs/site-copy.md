@@ -30,7 +30,7 @@ Year-1 focus (preview):
 We listen, support what works, and learn from every person we serve.
 
 Primary CTA: Learn about Our Work
-Internal link: Learn more about the approach of our founder, Francis Kumi Arhin.
+Internal link: Learn more about the approach of our founder, Francis Arhin.
 Image alt suggestion: Teen and caregiver reviewing a mental-health resource guide at a community table.
 
 ⸻
@@ -57,7 +57,7 @@ Approach: Small portfolio. Clear outcomes. Light reporting. Privacy respected—
 
 Internal links:
 	•	See our specific targets in Our Work.
-	•	Read more About Francis Kumi Arhin.
+	•	Read more About Francis Arhin.
 
 Image alt suggestion: Simple diagram with three labeled circles: Access, Talent, Stigma.
 
@@ -94,7 +94,7 @@ Rights & consent: All content is consent-first; grantees retain rights while gra
 Privacy note: No personal stories are required to show impact. Consent first, always.
 Safeguarding note: All direct programming is delivered with vetted partners and appropriate child-safety protocols.
 
-Internal link: This approach is guided by our founder, Francis Kumi Arhin.
+Internal link: This approach is guided by our founder, Francis Arhin.
 Secondary CTA: Contact us about partnerships.
 
 Image alt suggestion: Simple bar chart illustrating Year-1 target ranges.
@@ -103,12 +103,12 @@ Image alt suggestion: Simple bar chart illustrating Year-1 target ranges.
 
 About
 
-Title tag: About the Founder — Francis Kumi Arhin
-Meta description (≤155): Meet Francis Kumi Arhin, technologist and entrepreneur focused on practical, high-leverage philanthropy.
-H1: About the Founder — Francis Kumi Arhin
+Title tag: About the Founder — Francis Arhin
+Meta description (≤155): Meet Francis Arhin, technologist and entrepreneur focused on practical, high-leverage philanthropy.
+H1: About the Founder — Francis Arhin
 
 Lead:
-Francis Kumi Arhin is a technologist and builder focused on practical, high-leverage philanthropy. He works at the intersection of product partnerships and community impact.
+Francis Arhin is a technologist and builder focused on practical, high-leverage philanthropy. He works at the intersection of product partnerships and community impact.
 
 Approach:
 The Arhin Foundation reflects a simple conviction: support should be accessible, culturally aware, and private by default. We back what works, measure modestly, and scale with discipline.
@@ -116,7 +116,7 @@ The Arhin Foundation reflects a simple conviction: support should be accessible,
 Selected affiliations: Partner Engineer, Google/YouTube · Founder, Ofori Brothers Wine (confirm titles as you wish them publicly)
 
 Internal link: Read about Our Mission.
-Image alt: Portrait of Francis Kumi Arhin, founder of Arhin Foundation.
+Image alt: Portrait of Francis Arhin, founder of Arhin Foundation.
 
 ⸻
 
@@ -172,8 +172,8 @@ Place this in <head>:
   "foundingDate": "2025",
   "founder": {
     "@type": "Person",
-    "name": "Francis Kumi Arhin",
-    "alternateName": "Kumi Arhin",
+    "name": "Francis Arhin",
+    "alternateName": "Francis Arhin",
     "url": "https://arhin.org/about",
     "jobTitle": "Founder"
   },
@@ -198,7 +198,7 @@ Tasks
 	•	For each page, set title tag, meta description, H1, body copy, CTA(s), internal links, and image alt text exactly as provided in the “Final launch-ready copy” section.
 	•	Keep meta descriptions ≤155 characters; do not truncate or add extra adjectives.
 	3.	Internal links
-	•	From Home, Mission, and Our Work, include a text link to the About page using the anchor: About Francis Kumi Arhin (exact text).
+	•	From Home, Mission, and Our Work, include a text link to the About page using the anchor: About Francis Arhin (exact text).
 	•	From About, include a text link to Our Mission.
 	4.	Accessibility
 	•	Apply the exact alt text suggestions provided for each page image/graphic.
@@ -217,7 +217,7 @@ Tasks
 	7.	Schema
 	•	Insert the Organization JSON-LD block (exactly as provided) in the site <head> once.
 	8.	Consistency checks
-	•	First mention of the founder on the About page uses the full name Francis Kumi Arhin.
+	•	First mention of the founder on the About page uses the full name Francis Arhin.
 	•	Do not overuse the founder’s name on other pages (once as an internal link is sufficient).
 	•	Ensure the words “pilot” and target ranges [editable] appear on Our Work; leave “[editable]” until numbers are finalized.
 	9.	Strip template leftovers
@@ -228,7 +228,7 @@ Acceptance criteria
 	•	All five pages show the exact copy provided; headings and CTAs match.
 	•	Nav includes Our Work.
 	•	Meta titles/descriptions render per page and pass length checks.
-	•	Internal links to About Francis Kumi Arhin exist on Home, Mission, Our Work.
+	•	Internal links to About Francis Arhin exist on Home, Mission, Our Work.
 	•	Footer contains Privacy/Safeguarding/Legal lines on every page.
 	•	Organization JSON-LD is present at build.
 	•	No “Donate” UI present.

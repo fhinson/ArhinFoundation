@@ -110,35 +110,6 @@ function FocusAreas() {
   )
 }
 
-function ImpactStories() {
-  const stories = [
-    {
-      title: "Therapy Fund Expansion",
-      description: "Supported 15 community clinics to reduce wait times from 6 months to 2 weeks, serving 2,000+ individuals.",
-      category: "Access",
-      year: "2024"
-    },
-    {
-      title: "Clinical Fellowship Program", 
-      description: "Launched fellowship program training 25 new clinicians in culturally-responsive mental health care.",
-      category: "Talent",
-      year: "2024"
-    },
-    {
-      title: "Stigma Reduction Campaign",
-      description: "Partnered with content creators to normalize mental health conversations, reaching 1M+ young adults.",
-      category: "Stigma", 
-      year: "2023"
-    }
-  ]
-
-  return (
-    <>
-      {/* stories moved into FocusAreas above for dark background section */}
-    </>
-  )
-}
-
 function Approach() {
   return (
     <>

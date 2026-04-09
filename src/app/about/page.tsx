@@ -35,8 +35,8 @@ function LeadershipSection() {
             <FadeIn className="w-full">
               <div className="relative flex aspect-719/680 w-full overflow-hidden bg-white/10">
                 <Image
-                  src="/francis-kumi-arhin.jpg"
-                  alt="Francis Kumi Arhin, Founder and President of the Arhin Foundation"
+                  src="/francis-arhin.jpg"
+                  alt="Francis Arhin, Founder and President of the Arhin Foundation"
                   className="h-full w-full object-cover grayscale"
                   width={719}
                   height={680}
@@ -48,7 +48,7 @@ function LeadershipSection() {
           <div className="mt-16 lg:mt-0 lg:w-1/2 lg:min-w-132 lg:pl-4">
             <FadeIn>
               <h3 className="font-display text-3xl font-medium text-white">
-                Francis Kumi Arhin
+                Francis Arhin
               </h3>
               <p className="mt-2 font-display text-sm font-black uppercase tracking-widest text-white/80">
                 Founder and President
@@ -56,7 +56,7 @@ function LeadershipSection() {
             </FadeIn>
             <div className="mt-6 space-y-6 text-lg text-white">
               <p>
-                Francis Kumi Arhin is Founder and President of the Arhin Foundation. His commitment to youth mental health is shaped by a deep understanding of its interconnected nature and the quiet, often invisible struggles children face. These struggles ripple across families, communities, and generations. Breaking this cycle is his philanthropic dream.
+                Francis Arhin is Founder and President of the Arhin Foundation. His commitment to youth mental health is shaped by a deep understanding of its interconnected nature and the quiet, often invisible struggles children face. These struggles ripple across families, communities, and generations. Breaking this cycle is his philanthropic dream.
               </p>
               <p>
               His approach is informed by a career shaping consumer technologies at global scale across Google, YouTube, and Twitter. He previously founded an education technology platform that grew to over one million users globally. Today, he is Founder and CEO at Ofori Brothers Wine. He studied Computer Science at Columbia University, where his thesis earned the Theodore R. Bashkow Award.
@@ -143,26 +143,26 @@ function LeadershipSection() {
 export const metadata: Metadata = {
   title: 'About Us',
   description:
-    'Learn about the Arhin Foundation and our leadership. Founded by Francis Kumi Arhin, we are dedicated to expanding youth mental health access in underserved NYC communities through philanthropy and evidence-based interventions.',
+    'Learn about the Arhin Foundation and our leadership. Founded by Francis Arhin, we are dedicated to expanding youth mental health access in underserved NYC communities through philanthropy and evidence-based interventions.',
   openGraph: {
     title: 'About Us - Arhin Foundation',
-    description: 'Learn about the Arhin Foundation, our leadership, and our mission to expand youth mental health care access in NYC. Founded by Francis Kumi Arhin.',
+    description: 'Learn about the Arhin Foundation, our leadership, and our mission to expand youth mental health care access in NYC. Founded by Francis Arhin.',
     type: 'website',
     url: 'https://arhin.org/about',
     images: [
       {
-        url: 'https://arhin.org/francis-kumi-arhin-grayscale.jpg',
+        url: 'https://arhin.org/francis-arhin-grayscale.jpg',
         width: 1200,
         height: 1200,
-        alt: 'Francis Kumi Arhin, Founder and President of the Arhin Foundation',
+        alt: 'Francis Arhin, Founder and President of the Arhin Foundation',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'About Us - Arhin Foundation',
-    description: 'Learn about the Arhin Foundation, our leadership, and our mission to expand youth mental health care access in NYC. Founded by Francis Kumi Arhin.',
-    images: ['https://arhin.org/francis-kumi-arhin-grayscale.jpg'],
+    description: 'Learn about the Arhin Foundation, our leadership, and our mission to expand youth mental health care access in NYC. Founded by Francis Arhin.',
+    images: ['https://arhin.org/francis-arhin-grayscale.jpg'],
   },
 }
 
@@ -175,15 +175,15 @@ export default function About() {
           __html: JSON.stringify({
             '@context': 'https://schema.org',
             '@type': 'Person',
-            name: 'Francis Kumi Arhin',
-            alternateName: 'Kumi Arhin',
+            name: 'Francis Arhin',
+            alternateName: 'Francis Arhin',
             jobTitle: 'Founder and President',
             worksFor: {
               '@type': 'Organization',
               name: 'Arhin Foundation',
               url: 'https://arhin.org',
             },
-            description: 'Francis Kumi Arhin is Founder and President of the Arhin Foundation. His commitment to youth mental health is shaped by a deep understanding of its interconnected nature and the quiet, often invisible struggles children face. He brings experience from Google, YouTube, and Twitter, and is also Founder and CEO of Ofori Brothers Wine.',
+            description: 'Francis Arhin is Founder and President of the Arhin Foundation. His commitment to youth mental health is shaped by a deep understanding of its interconnected nature and the quiet, often invisible struggles children face. He brings experience from Google, YouTube, and Twitter, and is also Founder and CEO of Ofori Brothers Wine.',
             alumniOf: {
               '@type': 'EducationalOrganization',
               name: 'Columbia University',
@@ -200,7 +200,7 @@ export default function About() {
             sameAs: [
               'https://www.linkedin.com/in/francisarhin',
             ],
-            image: 'https://arhin.org/francis-kumi-arhin-grayscale.jpg',
+            image: 'https://arhin.org/francis-arhin-grayscale.jpg',
           }),
         }}
       />

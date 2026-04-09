@@ -65,8 +65,8 @@ export default function Layout({ children }: { children: React.ReactNode }) {
               foundingDate: '2025',
               founder: {
                 '@type': 'Person',
-                name: 'Francis Kumi Arhin',
-                alternateName: 'Kumi Arhin',
+                name: 'Francis Arhin',
+                alternateName: 'Francis Arhin',
                 url: 'https://arhin.org/about',
                 jobTitle: 'Founder and President',
                 description: 'Founder and President of the Arhin Foundation, dedicated to expanding youth mental health access in underserved NYC communities.',
